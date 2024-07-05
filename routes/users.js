@@ -1,10 +1,14 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const userController = require('../controllers/userController')
+const authMiddleware = require('../middlewares/auth')
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-  console.log("--------->")
-});
+// Definindo rotas e associando controladores
+router.get('/', userController.getAllUsers);
+router.post('/login', userController.loginUser);
+router.post('/register',authMiddleware,  userController.registerUser);
+//router.post('/', userController.createProduct);
+//router.put('/:id', userController.updateProduct);
+//router.delete('/:id', userController.deleteProduct);
 
-module.exports = router;
+module.exports = router; // Exporta o roteador
