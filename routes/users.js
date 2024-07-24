@@ -9,6 +9,6 @@ router.post('/login', userController.loginUser);
 router.post('/register',authMiddleware,  userController.registerUser);
 //router.post('/', userController.createProduct);
 //router.put('/:id', userController.updateProduct);
-//router.delete('/:id', userController.deleteProduct);
+router.delete('/:id', userController.deleteUser);
 
 module.exports = router; // Exporta o roteador

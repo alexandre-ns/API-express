@@ -38,3 +38,12 @@ exports.loginUser = async (req, res) => {
           res.status(500).json({ message: 'Internal server error' });
     }
 };
+
+exports.deleteUser = async (req, res) => {
+    try {
+      const user = await userServices.deleteUser(req.params.id);
+      res.status(200).json(user);
+    } catch (error) {
+        return res.status(404).json({ message: 'User not found' });
+    }
+};

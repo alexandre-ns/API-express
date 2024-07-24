@@ -29,3 +29,12 @@ exports.loginUser = async (UserData) => {
     return { message: 'Login successful', userId: user._id };
 
 };
+
+exports.deleteUser = async (id) => {
+    const user = await User.findByIdAndDelete(id);
+    
+    if(!user){
+        throw new Error('UserNotFound');
+    }
+    return user;
+};
