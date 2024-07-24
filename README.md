@@ -1,9 +1,11 @@
-# Basic website post(EM FASE DE TESTES E CORREÇÕES)
+# API express.js
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/alexandre-ns/API-express/blob/main/LICENSE) 
 
-# Sobre projeto Basic API rest
+# Sobre projeto API express.js
 
-"Basic API rest" é uma API(Application Programming Interface) REST. O objetivo dessa aplicação é servir como base para projetos de desenvolvimento de APIs rest em express.js com banco de dados MongoDB. O projeto conta com uma estrutura de arquivos e diretórios pensada justamente para oferecer uma maior modularidade e flexibilidade para desenvolvimento de novas APIs.
+"API express.js" é uma API(Application Programming Interface) REST. O objetivo dessa aplicação é um simples projeto para portifólio, sendo um simples modelo de API restful de E-comerce usando tecnologias como Node.js, Express.js usando um banco de dados MongoDB.
+
+ O projeto conta com uma estrutura de arquivos e diretórios(usando [express-generator](https://expressjs.com/en/starter/generator.html)) pensada justamente para oferecer uma maior modularidade e flexibilidade conforme diferentes funcionalidades vão sendo implementadas.
 
 A API conta com modelos de usuários contando com sistema simples de autenticação de login e restrição com token para registro de usuários.
 
