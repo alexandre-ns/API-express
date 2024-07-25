@@ -13,7 +13,7 @@ exports.getAllOrders = async (req, res) => {
     }
   };
 
-// get order id
+// Get order by id
 exports.getOrderById = async (req, res) => {
     try {
       const order = await orderService.getOrderById(req.params.id);
