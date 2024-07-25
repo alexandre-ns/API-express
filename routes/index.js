@@ -10,8 +10,8 @@ const routesCart = require('./cart');
 router.use('/products', routesProducts);
 router.use('/users', routesUser);
 router.use('/category', routesCategory);
-router.use('/category', routesOrder);
-router.use('/routesCart', routesCategory);
+router.use('/order', routesOrder);
+router.use('/cart', routesCart);
 
 // GET home page. 
 router.get('/', function(req, res, next) {
