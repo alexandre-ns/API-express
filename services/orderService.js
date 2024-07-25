@@ -1,5 +1,5 @@
 // services/userService.js
-const Product = require('../models/order');
+const Order = require('../models/order');
 
 exports.getAllOrders = async () => {
   return await Order.find();
