@@ -2,7 +2,7 @@ const router = require("express").Router();
 const cartService = require("../services/cartService");
 
 
-// Get all orders
+// Get all carts
 exports.getAllCarts = async (req, res) => {
     try {
       console.log("entrou controller");
@@ -13,7 +13,7 @@ exports.getAllCarts = async (req, res) => {
     }
   };
 
-// Get order by id
+// Get cart by id
 exports.getCartById = async (req, res) => {
     try {
       const cart = await cartService.getCartById(req.params.id);
@@ -26,7 +26,7 @@ exports.getCartById = async (req, res) => {
     }
   };
 
-//create new orders
+//create new cart
 exports.createCart = async (req, res) => {
     try {
         console.log("entrou controller create");
@@ -38,7 +38,7 @@ exports.createCart = async (req, res) => {
 };
 
 
-// update orders
+// update cart
 exports.updateCart = async (req, res) => {
     try {
       const updatedCart = await cartService.updateCart(req.params.id, req.body);
@@ -52,7 +52,7 @@ exports.updateCart = async (req, res) => {
   };
 
 
-  //delete orders
+  //delete cart
 exports.deleteCart = async (req, res) => {
     try {
         const cart = await cartService.deleteCart(req.params.id);
