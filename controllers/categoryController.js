@@ -56,7 +56,7 @@ exports.updateCategory = async (req, res) => {
 exports.deleteCategory = async (req, res) => {
     try {
         const category = await categoryService.deleteCategory(req.params.id);
-        if (order == null) {
+        if (category == null) {
         return res.status(404).json({ message: err.message });
         }
         res.status(200).json({ message: category });

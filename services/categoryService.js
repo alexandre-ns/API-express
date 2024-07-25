@@ -1,4 +1,4 @@
-const User = require('../models/category');
+const Category = require('../models/category');
 
 
 exports.getAllCategories = async () => {
