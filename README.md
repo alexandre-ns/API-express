@@ -3,7 +3,7 @@
 
 # Sobre projeto API express.js
 
-"API express.js" é uma API(Application Programming Interface) REST. O objetivo dessa aplicação é um simples projeto para portifólio, sendo um simples modelo de API restful de E-comerce usando tecnologias como Node.js, Express.js usando um banco de dados MongoDB.
+"API express.js" é uma API(Application Programming Interface) REST. O objetivo dessa aplicação é um simples projeto para portifólio, sendo um simples modelo de API restful de E-commerce usando tecnologias como Node.js, Express.js usando um banco de dados MongoDB.
 
  O projeto conta com uma estrutura de arquivos e diretórios(usando [express-generator](https://expressjs.com/en/starter/generator.html)) pensada justamente para oferecer uma maior modularidade e flexibilidade conforme diferentes funcionalidades vão sendo implementadas.
 
