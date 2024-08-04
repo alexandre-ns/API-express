@@ -1,22 +1,22 @@
 const router = require("express").Router();
-const orderService = require("../services/orderService");
+const OrderService = require("../services/orderService");
 
-
+class OrderController {
 // Get all orders
-exports.getAllOrders = async (req, res) => {
+  async getAllOrders(req, res) {
     try {
       console.log("entrou controller");
-      const orders = await orderService.getAllOrders();
+      const orders = await OrderService.getAllOrders();
       res.status(200).json(orders);
     } catch (err) {
       res.status(500).json({ message: err.message });
     }
-  };
+  }
 
 // Get order by id
-exports.getOrderById = async (req, res) => {
+  async getOrderById(req, res) {
     try {
-      const order = await orderService.getOrderById(req.params.id);
+      const order = await OrderService.getOrderById(req.params.id);
       if (!order) {
         return res.status(404).json({ message: err.message });
       }
@@ -24,24 +24,27 @@ exports.getOrderById = async (req, res) => {
     } catch (err) {
       res.status(500).json({ message: err.message });
     }
-  };
+  }
 
 //create new orders
-exports.createOrder = async (req, res) => {
+  async createOrder(req, res) {
     try {
         console.log("entrou controller create");
-        const newOrder = await orderService.createOrder(req.body);
+        const newOrder = await OrderService.createOrder(req.body);
         res.status(201).json(newOrder);
     } catch (err) {
         res.status(400).json({ message: err.message });
     }
-};
+}
 
 
 // update orders
-exports.updateOrder = async (req, res) => {
+  async updateOrder(req, res) {
     try {
-      const updatedOrder = await orderService.updateOrder(req.params.id, req.body);
+      const updatedOrder = await OrderService.updateOrder(
+        req.params.id,
+        req.body
+      );
       if (!updatedOrder) {
         return res.status(404).json({ message: err.message });
       }
@@ -49,13 +52,13 @@ exports.updateOrder = async (req, res) => {
     } catch (err) {
       res.status(400).json({ message: err.message });
     }
-  };
+  }
 
 
   //delete orders
-exports.deleteOrder = async (req, res) => {
+  async deleteOrder(req, res) {
     try {
-        const order = await orderService.deleteOrder(req.params.id);
+        const order = await OrderService.deleteOrder(req.params.id);
         if (order == null) {
         return res.status(404).json({ message: err.message });
         }
@@ -63,4 +66,8 @@ exports.deleteOrder = async (req, res) => {
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
-};
+}
+}
+
+
+module.exports = new OrderController();

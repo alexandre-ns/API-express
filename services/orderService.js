@@ -1,29 +1,104 @@
-// services/userService.js
-const Order = require('../models/order');
+const OrderRepository = require("../repositories/orderRepository");
 
-exports.getAllOrders = async () => {
-  return await Order.find();
+class OrderService {
+  async getAllOrders() {
+    const orders = await OrderRepository.findAll();
+    return orders.map((order) => ({
+      id: order._id,
+      user: order.user,
+      products: order.products,
+      totalAmount: order.totalAmount,
+      status: order.status,
+      createdAt: order.createdAt,
+    }));
+  }
+
+  async getOrderById(id) {
+    const order = await OrderRepository.findById(id);
+    return order
+      ? {
+          id: order._id,
+          user: order.user,
+          products: order.products,
+          totalAmount: order.totalAmount,
+          status: order.status,
+          createdAt: order.createdAt,
+        }
+      : null;
+  }
+
+  async createOrder(order) {
+    const newOrder = await OrderRepository.create(order);
+    return {
+      id: newOrder._id,
+      user: newOrder.user,
+      products: newOrder.products,
+      totalAmount: newOrder.totalAmount,
+      status: newOrder.status,
+      createdAt: newOrder.createdAt,
+    };
+  }
+
+  async updateOrder(id, order) {
+    const updatedOrder = await OrderRepository.update(id, order);
+    return updatedProduct
+      ? {
+          id: updatedOrder._id,
+          user: updatedOrder.user,
+          products: updatedOrder.products,
+          totalAmount: updatedOrder.totalAmount,
+          status: updatedOrder.status,
+          createdAt: updatedOrder.createdAt
+        }
+      : null;
+  }
+
+  async deleteOrder(id) {
+    const deletedProduct = await OrderRepository.delete(id);
+    return deletedProduct
+      ? {
+          id: deletedProduct._id,
+          name: deletedProduct.name,
+          price: deletedProduct.email,
+          category: deletedProduct.category,
+          quantityStock: deletedProduct.quantityStock,
+        }
+      : null;
+  }
+}
+
+module.exports = new OrderService();
+
+/* services/userService.js
+const category = require("../models/category");
+const ProductRepository = require("../repository/productRepository");
+
+exports.getAllProducts = async () => {
+  console.log("entrou service");
+  return await Product.find();
+  console.log("saiu service");
 };
 
-exports.getOrderById = async (id) => {
-  return await Order.findById(id);
+exports.getProductById = async (id) => {
+  return await Product.findById(id);
 };
 
-exports.createOrder = async (OrderData) => {
-  const order = new Order(OrderData);
-  return await order.save();
+exports.createProduct = async (ProductData) => {
+  const product = new Product(ProductData);
+  return await product.save();
 };
 
-exports.updateOrder = async (id, updateData) => {
-  const order = await Order.findById(id);
-  if (!order) {
+exports.updateProduct = async (id, updateData) => {
+  const product = await Product.findById(id);
+  if (!product) {
     return null;
   }
-  Object.assign(order, updateData);
-  return await order.save();
+  Object.assign(product, updateData);
+  return await product.save();
 };
 
-exports.deleteOrder = async (id) => {
-  const order = await Order.findByIdAndDelete(id);
-  return order;
-};
+exports.deleteProduct = async (id) => {
+  const product = await Product.findByIdAndDelete(id);
+  console.log(product)
+  return product;
+};*/
