@@ -2,7 +2,7 @@ const router = require("express").Router();
 const productService = require("../services/productService");
 
 class ProductController {
-  // Get all Products
+
   async getAllProducts(req, res) {
     try {
       console.log("entrou controller");
@@ -13,7 +13,7 @@ class ProductController {
     }
   }
 
-  // get product id
+
   async getProductById(req, res) {
     try {
       const product = await productService.getProductById(req.params.id);
@@ -26,7 +26,7 @@ class ProductController {
     }
   }
 
-  //create new product
+
   async createProduct(req, res) {
     try {
       console.log("entrou controller create");
@@ -37,7 +37,7 @@ class ProductController {
     }
   }
 
-  // update product
+
   async updateProduct(req, res) {
     try {
       const updatedproduct = await productService.updateProduct(
@@ -53,7 +53,7 @@ class ProductController {
     }
   }
 
-  //delete product
+
   async deleteProduct(req, res) {
     try {
       const product = await productService.deleteProduct(req.params.id);
