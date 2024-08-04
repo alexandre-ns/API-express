@@ -1,35 +1,51 @@
-const Category = require('../models/category');
+const CategoryRepository = require("../repositories/categoryRepository");
 
+class CategoryService {
+  async getAllCategories() {
+    const categories = await CategoryRepository.findAll();
+    return categories.map((category) => ({
+      id: category._id,
+      name: category.name,
+    }));
+  }
 
-exports.getAllCategories = async () => {
-    console.log("entrou service");
-    return await Category.find();
-    console.log("saiu service");
-};
+  async getCategoryById(id) {
+    const category = await CategoryRepository.findById(id);
+    return category
+      ? {
+          id: category._id,
+          name: category.name,
+        }
+      : null;
+  }
 
-exports.getCategoryById = async (id) => {
-    return await Category.findById(id);
-};
+  async createCategory(category) {
+    const newCategory = await CategoryRepository.create(category);
+    return {
+      id: newCategory._id,
+      name: newCategory.name,
+    };
+  }
 
-exports.createCategory = async (CategoryData) => {
-    const category = new Category(CategoryData);
-    return await category.save();
-};
+  async updateCategory(id, category) {
+    const updatedCategory = await CategoryRepository.update(id, category);
+    return updatedCategory
+      ? {
+          id: updatedCategory._id,
+          name: updatedCategory.name,
+        }
+      : null;
+  }
 
-exports.updateCategory = async (id, updateData) => {
-    const category = await Category.findById(id);
-    if (!category) {
-        return null;
-    }
-    Object.assign(category, updateData);
-    return await category.save();
-};
+  async deleteCategory(id) {
+    const deletedCategory = await CategoryRepository.delete(id);
+    return deletedCategory
+      ? {
+          id: deletedCategory._id,
+          name: deletedCategory.name,
+        }
+      : null;
+  }
+}
 
-exports.deleteCategory = async (id) => {
-    const category = await Category.findByIdAndDelete(id);
-    
-    if(!category){
-        throw new Error('CategoryNotFound');
-    }
-    return category;
-};
+module.exports = new CategoryService();
