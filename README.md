@@ -9,7 +9,15 @@
 
 A API conta com modelos de usuários contando com sistema simples de autenticação de login e restrição com token para registro de usuários.
 
+# Implementação
+Sistema implementado com base em arquitetura de camadas
+1.  controllers/ camada de apresentação - interface com o usuário.
+2.  services/ camada de aplicação - lógica da aplicação.
+3.  models/ camada de domínio - modela os dados.
+4.  repositories/  camada de repository - interage com o banco de dados
+5.  inf/ camada de infraestrutura - serviços basicos para funcionamento.
 
+    
 
  - ### User
     - registro de novos usuários.
