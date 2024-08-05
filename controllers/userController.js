@@ -1,8 +1,9 @@
 const router = require("express").Router();
-const userServices = require("../services/userServices");
+const UserService = require("../services/userService");
 
+class UserController {
 
-exports.getAllUsers = async (req, res) => {
+  async getAllUsers(req, res) {
     try {
       console.log("entrou controller");
       const users = await userServices.getAllUsers();
@@ -10,10 +11,10 @@ exports.getAllUsers = async (req, res) => {
     } catch (err) {
       res.status(500).json({ message: err.message });
     }
-};
+  }
 
 
-exports.registerUser = async (req, res) => {
+  async registerUser(req, res) {
     try {
         console.log("entrou controller create");
         const newuser = await userServices.registerUser(req.body);
@@ -21,10 +22,10 @@ exports.registerUser = async (req, res) => {
     } catch (err) {
         res.status(400).json({ message: err.message });
     }
-};
+  }
 
 
-exports.loginUser = async (req, res) => {
+  async loginUser(req, res) {
     try {
         const user = await userServices.loginUser(req.body);
         res.status(200).json(user);
@@ -37,13 +38,16 @@ exports.loginUser = async (req, res) => {
           }
           res.status(500).json({ message: 'Internal server error' });
     }
-};
+  }
 
-exports.deleteUser = async (req, res) => {
+  async deleteUser(req, res) {
     try {
       const user = await userServices.deleteUser(req.params.id);
       res.status(200).json(user);
     } catch (error) {
         return res.status(404).json({ message: 'User not found' });
     }
-};
+  }
+}
+
+module.exports = new UserController();
