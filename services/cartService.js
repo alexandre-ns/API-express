@@ -1,35 +1,39 @@
-const Cart = require('../models/cart');
+const CartRepository = require("../repositories/productRepository");
 
+class CartService {
 
-exports.getAllCarts = async () => {
+  async getAllCarts() {
     console.log("entrou service");
     return await Cart.find();
     console.log("saiu service");
-};
+  }
 
-exports.getCartById = async (id) => {
+  async getCartById() {
     return await Cart.findById(id);
-};
+  }
 
-exports.createCart = async (CartData) => {
+  async createCart() {
     const cart = new Cart(CartData);
     return await cart.save();
-};
+  }
 
-exports.updateCart = async (id, updateData) => {
+  async updateCart() {
     const cart = await Cart.findById(id);
     if (!cart) {
-        return null;
+      return null;
     }
     Object.assign(cart, updateData);
     return await cart.save();
-};
+  }
 
-exports.deleteCart = async (id) => {
+  async deleteCart() {
     const cart = await Cart.findByIdAndDelete(id);
-    
-    if(!cart){
-        throw new Error('CategoryNotFound');
+
+    if (!cart) {
+      throw new Error("CategoryNotFound");
     }
     return cart;
-};
+  }
+}
+
+module.exports = new CartService();

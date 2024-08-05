@@ -1,22 +1,20 @@
 const router = require("express").Router();
-const cartService = require("../services/cartService");
+const CartService = require("../services/cartService");
 
-
-// Get all carts
-exports.getAllCarts = async (req, res) => {
+class CartController {
+  async getAllCarts(req, res) {
     try {
       console.log("entrou controller");
-      const carts = await cartService.getAllCarts();
+      const carts = await CartService.getAllCarts();
       res.status(200).json(carts);
     } catch (err) {
       res.status(500).json({ message: err.message });
     }
-  };
+  }
 
-// Get cart by id
-exports.getCartById = async (req, res) => {
+  async getCartById(req, res) {
     try {
-      const cart = await cartService.getCartById(req.params.id);
+      const cart = await CartService.getCartById(req.params.id);
       if (!cart) {
         return res.status(404).json({ message: err.message });
       }
@@ -24,24 +22,21 @@ exports.getCartById = async (req, res) => {
     } catch (err) {
       res.status(500).json({ message: err.message });
     }
-  };
+  }
 
-//create new cart
-exports.createCart = async (req, res) => {
+  async createCart(req, res) {
     try {
-        console.log("entrou controller create");
-        const newCart = await cartService.createCart(req.body);
-        res.status(201).json(newCart);
+      console.log("entrou controller create");
+      const newCart = await CartService.createCart(req.body);
+      res.status(201).json(newCart);
     } catch (err) {
-        res.status(400).json({ message: err.message });
+      res.status(400).json({ message: err.message });
     }
-};
+  }
 
-
-// update cart
-exports.updateCart = async (req, res) => {
+  async updateCart(req, res) {
     try {
-      const updatedCart = await cartService.updateCart(req.params.id, req.body);
+      const updatedCart = await CartService.updateCart(req.params.id, req.body);
       if (!updatedCart) {
         return res.status(404).json({ message: err.message });
       }
@@ -49,18 +44,19 @@ exports.updateCart = async (req, res) => {
     } catch (err) {
       res.status(400).json({ message: err.message });
     }
-  };
+  }
 
-
-  //delete cart
-exports.deleteCart = async (req, res) => {
+  async deleteCart(req, res) {
     try {
-        const cart = await cartService.deleteCart(req.params.id);
-        if (cart == null) {
+      const cart = await CartService.deleteCart(req.params.id);
+      if (cart == null) {
         return res.status(404).json({ message: err.message });
-        }
-        res.status(200).json({ message: cart });
+      }
+      res.status(200).json({ message: cart });
     } catch (err) {
-        res.status(500).json({ message: err.message });
+      res.status(500).json({ message: err.message });
     }
-};
+  }
+}
+
+module.exports = new CartController();
