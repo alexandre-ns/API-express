@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const productController = require('../controllers/productController')
+const productController = require("../controllers/productController");
 
 // Definindo rotas e associando controladores
-router.get('/', productController.getAllProducts);
+router.get("/", productController.getAllProducts);
 router.get('/:id', productController.getProductById);
 router.post('/', productController.createProduct);
 router.put('/:id', productController.updateProduct);
