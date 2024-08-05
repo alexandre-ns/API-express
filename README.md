@@ -5,16 +5,55 @@
 
 [LINK DESENVOLVIMENTO](https://github.com/users/alexandre-ns/projects/1/views/1)
 
+## Sobre projeto API express.js
 
-# Sobre projeto API express.js
+"API express.js" é uma API(Application Programming Interface) REST. O objetivo dessa aplicação é um simples projeto para portifólio, sendo um simples modelo de API rest de E-commerce usando tecnologias como Node.js, Express.js, além de um banco de dados MongoDB.
 
-"API express.js" é uma API(Application Programming Interface) REST. O objetivo dessa aplicação é um simples projeto para portifólio, sendo um simples modelo de API restful de E-commerce usando tecnologias como Node.js, Express.js usando um banco de dados MongoDB.
+ O projeto conta com uma estrutura de arquivos e diretórios([express-generator](https://expressjs.com/en/stargenerator.html)) construida para seguir arquitetura de camadas, justamente para oferecer uma maior modularidade e flexibilidade, conforme diferentes funcionalidades vão sendo implementadas.
 
- O projeto conta com uma estrutura de arquivos e diretórios(usando ter/[express-generator](https://expressjs.com/en/stargenerator.html)) pensada justamente para oferecer uma maior modularidade e flexibilidade conforme diferentes funcionalidades vão sendo implementadas.
+A API conta com modelos de usuários contando com sistema simples de autenticação de login e restrição com token.
 
-A API conta com modelos de usuários contando com sistema simples de autenticação de login e restrição com token para registro de usuários.
+## Tecnologias usadas
+- desenvolvimento
+    - Javascript
+    - npm
+    - Node.js
+    - Express.js
+
+- Banco de dados
+    - MongoDB
+    - ODM Mongoose
+    - Mongosh
+    - migrate-mongo
+
+- testes
+    - mocha
+    - chai 
+    - supertest
+    - Postman
+
+- auxiliares
+    - Docker container
+    - Jwt
+
 
 # Implementação
+
+O projeto segue modelo de arquitetura de camadas
+
+ ```bash
+Estrutura Principal de diretórios
+
+project
+├── controllers
+├── middlewares
+├── models
+├── repositories
+├── routes
+├── services
+└── tests
+```
+
 Sistema implementado com base em arquitetura de camadas
 1.  controllers/ camada de apresentação - interface com o usuário.
 2.  services/ camada de aplicação - lógica da aplicação.
@@ -22,15 +61,14 @@ Sistema implementado com base em arquitetura de camadas
 4.  repositories/  camada de repository - interage com o banco de dados
 5.  inf/ camada de infraestrutura - serviços basicos para funcionamento.
 
-    
 
- - ### User
+### User
     - registro de novos usuários.
     - login de usuários.
     - exclusão de usuários.
     - consulta de usuários.
 
- - ### Products
+### Products
     - criação de novos produtos.
     - consulta de produtos.
     - atualização de produtos.
@@ -42,31 +80,6 @@ Sistema implementado com base em arquitetura de camadas
 Após iniciar a aplicação temos o ambiente de adminstração django, que é onde podemos iniciar a montagem do website.
 
 
-
-##### Para o Correto funcionamento cada modelo de página deve possuir um e somente um elemento com campo 'Página ativa' ativado.
-- Página Contatos - Construção de tela da página CONTATO 
-- Página Sobre - Construção de tela da página SOBRE.
-- Página Inicial - Construção de tela da página INICIAL.
-
-### Exemplo simples de resultado de Layout web
-![site 5](https://github.com/alexandre-ns/Assets/blob/main/basic_web_blog/site07.png)
-
-Página Inicial.
-
-![site 6](https://github.com/alexandre-ns/Assets/blob/main/basic_web_blog/site06.png)
-
-Página Contato.
-
-![site 6](https://github.com/alexandre-ns/Assets/blob/main/basic_web_blog/site03.png)
-![site 6](https://github.com/alexandre-ns/Assets/blob/main/basic_web_blog/site04.png)
-
-Redes sociais
-
-
-## Tecnologias utilizadas
-- JavaScript
-- Node.js
-- Express.js
 
 # Como executar o projeto
 
