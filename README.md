@@ -68,11 +68,15 @@ Sistema implementado com base em arquitetura de camadas
     - exclusão de usuários.
     - consulta de usuários.
 
-### Products
+### Product
     - criação de novos produtos.
     - consulta de produtos.
     - atualização de produtos.
     - exclusão de produtos.
+
+### Order
+
+### Cart
 
 
 # Funcionamento
