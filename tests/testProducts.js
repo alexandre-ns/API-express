@@ -2,22 +2,25 @@ const request = require("supertest");
 const chai = require("chai");
 const expect = chai.expect;
 const app = require("../app");
+(async () => {
+  const chai = await import('chai');
+  const expect = chai.expect;
 
-describe("test routes /products", () => {
-
-
-  describe("GET /api/products", () => {
-    it("should return all products", (done) => {
-      request(app)
-        .get("/api/products")
-        .end((err, res) => {
-          expect(res.status).to.equal(200);
-          expect(res.body).to.be.an("array");
-          expect(res.body.length).to.equal(2);
-          done();
-        });
+  describe("test routes /products", () => {
+    describe("GET /api/products", () => {
+      it("should return all products", (done) => {
+        request(app)
+          .get("/api/products")
+          .end((err, res) => {
+            expect(res.status).to.equal(200);
+            expect(res.body).to.be.an("array");
+            expect(res.body.length).to.equal(2);
+            done();
+          });
+      });
     });
   });
+})();
 
   /*describe("GET /api/products/:id", () => {
     it("should return a product by the given ID", (done) => {
@@ -57,4 +60,4 @@ describe("test routes /products", () => {
         });
     });
   });*/
-});
+//});

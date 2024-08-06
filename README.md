@@ -3,7 +3,7 @@
 
 ## Status do Projeto
 
-[LINK DESENVOLVIMENTO](https://github.com/users/alexandre-ns/projects/1/views/1)
+Em desenvolvimento [ATIVIDADES](https://github.com/users/alexandre-ns/projects/1/views/1)
 
 ## Sobre projeto API express.js
 
