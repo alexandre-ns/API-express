@@ -2,7 +2,7 @@ const router = require("express").Router();
 const OrderService = require("../services/orderService");
 
 class OrderController {
-// Get all orders
+
   async getAllOrders(req, res) {
     try {
       const orders = await OrderService.getAllOrders();
@@ -12,7 +12,6 @@ class OrderController {
     }
   }
 
-// Get order by id
   async getOrderById(req, res) {
     try {
       const order = await OrderService.getOrderById(req.params.id);
@@ -25,7 +24,7 @@ class OrderController {
     }
   }
 
-//create new orders
+
   async createOrder(req, res) {
     try {
         const newOrder = await OrderService.createOrder(req.body);
@@ -36,7 +35,6 @@ class OrderController {
 }
 
 
-// update orders
   async updateOrder(req, res) {
     try {
       const updatedOrder = await OrderService.updateOrder(
@@ -53,7 +51,6 @@ class OrderController {
   }
 
 
-  //delete orders
   async deleteOrder(req, res) {
     try {
         const order = await OrderService.deleteOrder(req.params.id);
