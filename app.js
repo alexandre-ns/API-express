@@ -6,9 +6,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const connectDB = require('./mongoose');
-const apiRoutes = require('./routes'); // ROUTES
-
-
+const apiRoutes = require('./routes');
 
 var app = express();
 app.use(bodyParser.json());
