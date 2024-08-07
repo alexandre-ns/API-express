@@ -13,6 +13,7 @@ migrations/
 #others
 .eslint.json
 eslint.config.mjs
+migrate-mongo-config.js
 public/
 views/
 config/
