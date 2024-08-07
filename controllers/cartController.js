@@ -4,7 +4,6 @@ const CartService = require("../services/cartService");
 class CartController {
   async getAllCarts(req, res) {
     try {
-      console.log("entrou controller");
       const carts = await CartService.getAllCarts();
       res.status(200).json(carts);
     } catch (err) {
@@ -26,7 +25,6 @@ class CartController {
 
   async createCart(req, res) {
     try {
-      console.log("entrou controller create");
       const newCart = await CartService.createCart(req.body);
       res.status(201).json(newCart);
     } catch (err) {

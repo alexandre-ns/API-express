@@ -5,4 +5,3 @@ const secret = 'testedaminhaapi';
 
 // Gerar um token JWT
 const token = jwt.sign(payload, secret);
-console.log('Generated Token:', token);

@@ -16,7 +16,6 @@ class ProductController {
   async getProductById(req, res) {
     try {
       const product = await productService.getProductById(req.params.id);
-      console.log(req.params);
       if (!product) {
         return res.status(404).json({ message: "Product not found" });
       }
@@ -29,7 +28,6 @@ class ProductController {
 
   async createProduct(req, res) {
     try {
-      console.log("entrou controller create");
       const newproduct = await productService.createProduct(req.body);
       res.status(201).json(newproduct);
     } catch (err) {

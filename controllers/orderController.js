@@ -5,7 +5,6 @@ class OrderController {
 // Get all orders
   async getAllOrders(req, res) {
     try {
-      console.log("entrou controller");
       const orders = await OrderService.getAllOrders();
       res.status(200).json(orders);
     } catch (err) {
@@ -29,7 +28,6 @@ class OrderController {
 //create new orders
   async createOrder(req, res) {
     try {
-        console.log("entrou controller create");
         const newOrder = await OrderService.createOrder(req.body);
         res.status(201).json(newOrder);
     } catch (err) {

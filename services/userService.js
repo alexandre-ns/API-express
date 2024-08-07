@@ -42,7 +42,6 @@ class UserService {
     if (!(await user.comparePassword(password))) {
       throw new Error("InvalidAcess");
     }
-    console.log("--> password certo");
     return { message: "Login successful", user: user.username };
   }
 

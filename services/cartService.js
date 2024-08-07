@@ -3,9 +3,7 @@ const CartRepository = require("../repositories/productRepository");
 class CartService {
 
   async getAllCarts() {
-    console.log("entrou service");
     return await Cart.find();
-    console.log("saiu service");
   }
 
   async getCartById() {

@@ -5,7 +5,6 @@ class CategoryController {
   // Get all orders
   async getAllCategories(req, res) {
       try {
-        console.log("entrou controller");
         const categories = await categoryService.getAllCategories();
         res.status(200).json(categories);
       } catch (err) {
@@ -29,7 +28,6 @@ class CategoryController {
   //create new orders
   async createCategory(req, res) {
       try {
-          console.log("entrou controller create");
           const newCategory = await categoryService.createCategory(req.body);
           res.status(201).json(newCategory);
       } catch (err) {

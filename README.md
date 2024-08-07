@@ -22,20 +22,21 @@ A API conta com modelos de usuários contando com sistema simples de autenticaç
 
 - Banco de dados
     - MongoDB
-    - ODM Mongoose
-    - Mongosh
-    - migrate-mongo
+    - *ODM Mongoose
+    - *Mongosh
+    - *migrate-mongo
 
 - testes
     - mocha
-    - chai 
+    - should 
     - supertest
     - Postman
 
 - auxiliares
-    - Docker container
+    - *Docker container
     - Jwt
 
+*Uso indireto ou tecnologia secundária.
 
 # Implementação
 
@@ -46,12 +47,16 @@ Estrutura Principal de diretórios
 
 project
 ├── controllers
+├── errors
 ├── middlewares
+│   ├── auth
+│   └── validator
 ├── models
 ├── repositories
 ├── routes
 ├── services
-└── tests
+├── test
+└── validation
 ```
 
 Sistema implementado com base em arquitetura de camadas
@@ -63,35 +68,16 @@ Sistema implementado com base em arquitetura de camadas
 
 
 ### User
-    - registro de novos usuários.
-    - login de usuários.
-    - exclusão de usuários.
-    - consulta de usuários.
-
 ### Product
-    - criação de novos produtos.
-    - consulta de produtos.
-    - atualização de produtos.
-    - exclusão de produtos.
-
 ### Order
-
 ### Cart
 
 
 # Funcionamento
 
-Após iniciar a aplicação temos o ambiente de adminstração django, que é onde podemos iniciar a montagem do website.
-
-
 
 # Como executar o projeto
 
-Pré-requisitos: 
-    - jav
-    - Django
-    - pip
-    - Ambiente virtual python(opcional, mas recomendado)
 
 ## Ambiente de produção.
 

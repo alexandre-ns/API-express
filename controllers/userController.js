@@ -5,7 +5,6 @@ class UserController {
 
   async getAllUsers(req, res) {
     try {
-      console.log("entrou controller");
       const users = await userServices.getAllUsers();
       res.status(200).json(users);
     } catch (err) {
@@ -16,7 +15,6 @@ class UserController {
 
   async registerUser(req, res) {
     try {
-        console.log("entrou controller create");
         const newuser = await userServices.registerUser(req.body);
         res.status(201).json(newuser);
     } catch (err) {
