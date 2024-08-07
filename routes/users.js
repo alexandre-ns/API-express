@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const userController = require('../controllers/userController')
-const authMiddleware = require('../middlewares/auth')
+const authMiddleware = require('../middlewares/auth/auth')
 
 // Definindo rotas e associando controladores
 router.get('/', userController.getAllUsers);

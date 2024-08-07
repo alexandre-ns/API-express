@@ -16,6 +16,7 @@ class ProductService {
 
   async getProductById(id) {
     const product = await productRepository.findById(id);
+    //console.log("----->>", product);
     return product
       ? {
           id: product._id,
