@@ -2,7 +2,7 @@ const router = require("express").Router();
 const categoryService = require("../services/categoryService");
 
 class CategoryController {
-  // Get all orders
+
   async getAllCategories(req, res) {
       try {
         const categories = await categoryService.getAllCategories();
@@ -12,7 +12,6 @@ class CategoryController {
       }
     }
 
-  // Get order by id
   async getCategoryById(req, res) {
       try {
         const category = await categoryService.getCategoryById(req.params.id);
@@ -25,7 +24,6 @@ class CategoryController {
       }
     }
 
-  //create new orders
   async createCategory(req, res) {
       try {
           const newCategory = await categoryService.createCategory(req.body);
@@ -35,8 +33,6 @@ class CategoryController {
       }
   }
 
-
-  // update orders
   async updateCategory(req, res) {
       try {
         const updatedCategory = await categoryService.updateCategory(req.params.id, req.body);
@@ -49,8 +45,6 @@ class CategoryController {
       }
     }
 
-
-    //delete orders
   async deleteCategory(req, res) {
       try {
           const category = await categoryService.deleteCategory(req.params.id);
