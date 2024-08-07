@@ -12,6 +12,7 @@ Em desenvolvimento [ATIVIDADES](https://github.com/users/alexandre-ns/projects/1
  O projeto conta com uma estrutura de arquivos e diretórios([express-generator](https://expressjs.com/en/stargenerator.html)) construida para seguir arquitetura de camadas, justamente para oferecer uma maior modularidade e flexibilidade, conforme diferentes funcionalidades vão sendo implementadas.
 
 A API conta com modelos de usuários contando com sistema simples de autenticação de login e restrição com token.
+Sistema de validação de dados
 
 ## Tecnologias usadas
 - desenvolvimento

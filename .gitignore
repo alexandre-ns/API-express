@@ -10,6 +10,14 @@ lerna-debug.log*
 #migrations
 migrations/
 
+#others
+.eslint.json
+eslint.config.mjs
+public/
+views/
+config/
+
+
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 

@@ -1,7 +1,6 @@
 const jwt = require('jsonwebtoken');
 
-const payload = { id: 123, role: 'admin' };
-const secret = 'testedaminhaapi';
+const payload = { id: "", role: "" };
+const secret = "";
 
-// Gerar um token JWT
 const token = jwt.sign(payload, secret);
