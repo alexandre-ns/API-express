@@ -13,10 +13,5 @@ router.use('/category', routesCategory);
 router.use('/order', routesOrder);
 router.use('/cart', routesCart);
 
-// GET home page. 
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-
-});
 
 module.exports = router;
