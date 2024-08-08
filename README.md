@@ -85,25 +85,9 @@ Sistema implementado com base em arquitetura de camadas
 
 ### Ambiente de desenvolvimento.
 
-```bash
-# clonar repositório
-git clone https://github.com/alexandre-ns/Base-Web-Django.git
 
-# entrar na pasta do projeto back end
-cd Base-Web-Django
+### Ambiente de produção.
 
-# Instalação de dependências
-pip install -r requirements.txt
-
-# criação dos arquivos de migração
-python manage.py makemigrations
-
-# Aplicação de migrações
-python manage.py migrate
-
-# Inicia servidor Django
-python manage.py runserver
-```
 
 # Autor
 
