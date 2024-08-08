@@ -1,19 +1,42 @@
 const express = require('express');
 const router = express.Router();
 const productController = require("../controllers/productController");
-const productValidation = require("../validation/validationProduct");
-const validateProduct = require("../middlewares/validator/validatorProduct");
+const productMiddleware = require("../middlewares/validatorCommon/productMiddlare");
+const {
+  productValidationID,
+  productValidationAll,
+  productValidationSome
+} = require("../validation/productValidation");
+const {checkSchema} = require("express-validator");
 
 
 router.get("/", productController.getAllProducts);
+
 router.get(
   "/:id",
-  productValidation,
-  validateProduct,
+  checkSchema(productValidationID),
+  productMiddleware,
   productController.getProductById
 );
-router.post('/', productController.createProduct);
-router.put('/:id', productController.updateProduct);
-router.delete('/:id', productController.deleteProduct);
+
+router.post(
+  "/",
+  checkSchema(productValidationAll),
+  productMiddleware,
+  productController.createProduct
+);
+
+router.put(
+  "/:id", 
+  checkSchema(productValidationSome),
+  productMiddleware,
+  productController.updateProduct);
+
+router.delete(
+  "/:id",
+  checkSchema(productValidationID),
+  productMiddleware,
+  productController.deleteProduct
+);
 
 module.exports = router;
