@@ -1,7 +1,3 @@
-const { body, param, validationResult } = require("express-validator");
-
-
-
 const productValidationID = {
   id: {
     in: ["params"],
@@ -12,11 +8,6 @@ const productValidationID = {
 
 
 const productValidationAll = {
-  id: {
-    in: ["params"],
-    notEmpty: true,
-    errorMessage: "erro no campo id",
-  },
   name: {
     in: ["body"],
     notEmpty: true,
