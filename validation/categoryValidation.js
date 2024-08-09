@@ -6,7 +6,6 @@ const categoryValidationID = {
   },
 };
 
-
 const categoryValidationAll = {
   name: {
     in: ["body"],
@@ -27,4 +26,10 @@ const categoryValidationSome = {
     errorMessage: "erro no campo nome",
     optional: false,
   },
+};
+
+module.exports = {
+  categoryValidationID,
+  categoryValidationAll,
+  categoryValidationSome
 };

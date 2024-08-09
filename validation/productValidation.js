@@ -6,7 +6,6 @@ const productValidationID = {
   }
 };
 
-
 const productValidationAll = {
   name: {
     in: ["body"],
