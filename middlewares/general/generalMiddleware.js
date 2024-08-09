@@ -1,4 +1,3 @@
-const productschema = require('../../validation/productValidation')
 const {
   body,
   param,
@@ -6,7 +5,7 @@ const {
   checkSchema,
 } = require("express-validator");
 
-const productMiddleware = async (req, res, next) => {
+const generalMiddleware = async (req, res, next) => {
   const errors = validationResult(req);
 
   if (!errors.isEmpty()) {
@@ -16,4 +15,4 @@ const productMiddleware = async (req, res, next) => {
   next();
 };
 
-module.exports = productMiddleware;
+module.exports = generalMiddleware;
