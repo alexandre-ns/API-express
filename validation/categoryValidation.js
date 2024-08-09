@@ -1,8 +1,12 @@
 const categoryValidationID = {
   id: {
     in: ["params"],
-    errorMessage: "erro no campo id",
-    isLength: { options: { min: 24, max: 24 } },
+    isMongoId: {
+      errorMessage: "Invalid Category ID",
+    },
+    notEmpty: {
+      errorMessage: "Category ID is required",
+    },
   },
 };
 
@@ -10,20 +14,24 @@ const categoryValidationAll = {
   name: {
     in: ["body"],
     notEmpty: true,
-    errorMessage: "erro no campo nome",
-  }
+    errorMessage: "Category name is required",
+  },
 };
 
 const categoryValidationSome = {
   id: {
     in: ["params"],
-    notEmpty: true,
-    errorMessage: "erro no campo id",
+    isMongoId: {
+      errorMessage: "Invalid Category ID",
+    },
+    notEmpty: {
+      errorMessage: "Category ID is required",
+    }
   },
   name: {
     in: ["body"],
     notEmpty: true,
-    errorMessage: "erro no campo nome",
+    errorMessage: "Category name is required",
     optional: false,
   },
 };
