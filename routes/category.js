@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const categoryController = require('../controllers/categoryController');
-const productMiddleware = require("../middlewares/general/generalMiddleware");
+const generalMiddleware = require("../middlewares/general/generalMiddleware");
 const {
   categoryValidationID,
   categoryValidationAll,
@@ -14,28 +14,28 @@ router.get("/", categoryController.getAllCategories);
 router.get(
   "/:id",
   checkSchema(categoryValidationID),
-  productMiddleware,
+  generalMiddleware,
   categoryController.getCategoryById
 );
 
 router.post(
   "/",
   checkSchema(categoryValidationAll),
-  productMiddleware,
+  generalMiddleware,
   categoryController.createCategory
 );
 
 router.put(
   "/:id",
   checkSchema(categoryValidationSome),
-  productMiddleware,
+  generalMiddleware,
   categoryController.updateCategory
 );
 
 router.delete(
   "/:id",
   checkSchema(categoryValidationID),
-  productMiddleware,
+  generalMiddleware,
   categoryController.deleteCategory
 );
 

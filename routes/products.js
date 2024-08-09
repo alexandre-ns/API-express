@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const productController = require("../controllers/productController");
-const productMiddleware = require("../middlewares/general/generalMiddleware");
+const generalMiddleware = require("../middlewares/general/generalMiddleware");
 const {
   productValidationID,
   productValidationAll,
@@ -15,27 +15,27 @@ router.get("/", productController.getAllProducts);
 router.get(
   "/:id",
   checkSchema(productValidationID),
-  productMiddleware,
+  generalMiddleware,
   productController.getProductById
 );
 
 router.post(
   "/",
   checkSchema(productValidationAll),
-  productMiddleware,
+  generalMiddleware,
   productController.createProduct
 );
 
 router.put(
   "/:id", 
   checkSchema(productValidationSome),
-  productMiddleware,
+  generalMiddleware,
   productController.updateProduct);
 
 router.delete(
   "/:id",
   checkSchema(productValidationID),
-  productMiddleware,
+  generalMiddleware,
   productController.deleteProduct
 );
 
