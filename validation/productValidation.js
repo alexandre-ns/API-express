@@ -41,6 +41,7 @@ const productValidationAll = {
 
 const productValidationSome = {
   id: {
+    in: ["params"],
     isMongoId: {
       errorMessage: "Invalid product ID",
     },
