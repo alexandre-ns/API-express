@@ -1,8 +1,12 @@
 const productValidationID = {
   id: {
     in: ["params"],
-    errorMessage: "erro no id",
-    isLength: {options: { min: 24, max: 24 }}
+    isMongoId: {
+      errorMessage: "Invalid product ID",
+    },
+    notEmpty: {
+      errorMessage: "Product ID is required",
+    }
   }
 };
 
@@ -10,39 +14,44 @@ const productValidationAll = {
   name: {
     in: ["body"],
     notEmpty: true,
-    errorMessage: "erro no campo nome",
+    errorMessage: "Product name is required",
   },
   price: {
     in: ["body"],
     isFloat: {
       options: { gt: 0 },
     },
-    errorMessage: "erro no campo preço",
+    errorMessage: "Price must be greater than 0",
   },
   quantityStock: {
     in: ["body"],
     isInt: {
       options: { gt: 0 },
     },
-    errorMessage: "erro no campo quantidade",
+    errorMessage: "Quantity stock must be greater than 0",
   },
   category: {
     in: ["body"],
-    isLength: {options: { min: 24, max: 24 }},
-    errorMessage: "erro no campo categoria",
-  },
+    isMongoId: {
+      errorMessage: "Invalid category ID",
+    },
+    optional: true,
+  }
 };
 
 const productValidationSome = {
   id: {
-    in: ["params"],
-    notEmpty: true,
-    errorMessage: "erro no campo id",
+    isMongoId: {
+      errorMessage: "Invalid product ID",
+    },
+    notEmpty: {
+      errorMessage: "Product ID is required",
+    },
   },
   name: {
     in: ["body"],
     notEmpty: true,
-    errorMessage: "erro no campo nome",
+    errorMessage: "Product name is required",
     optional: true,
   },
   price: {
@@ -50,7 +59,7 @@ const productValidationSome = {
     isFloat: {
       options: { gt: 0 },
     },
-    errorMessage: "erro no campo preço",
+    errorMessage: "Price must be greater than 0",
     optional: true,
   },
   quantityStock: {
@@ -58,13 +67,14 @@ const productValidationSome = {
     isInt: {
       options: { gt: 0 },
     },
-    errorMessage: "erro no campo quantidade",
+    errorMessage: "Quantity stock must be greater than 0",
     optional: true,
   },
   category: {
     in: ["body"],
-    isLength: {options: { min: 24, max: 24 }},
-    errorMessage: "erro no campo categoria",
+    isMongoId: {
+      errorMessage: "Invalid category ID",
+    },
     optional: true,
   },
 };
