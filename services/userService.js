@@ -1,11 +1,11 @@
 const express = require('express');
-const UserRepository = require("../repositories/productRepository");
+const userRepository = require("../repositories/userRepository");
 const jwt = require('jsonwebtoken');
 const router = express.Router();
 
 class UserService {
   async getAllUsers() {
-    const users = await UserRepository.findAll();
+    const users = await userRepository.findAll();
     return users.map((user) => ({
       id: user._id,
       username: user.username,
@@ -13,7 +13,7 @@ class UserService {
   }
 
   async getUserById(id) {
-    const user = await UserRepository.findById(id);
+    const user = await userRepository.findById(id);
     return user
       ? {
           id: user._id,
@@ -23,7 +23,7 @@ class UserService {
   }
 
   async createUser(userData) {
-    const user = await UserRepository.create(userData);
+    const user = await userRepository.create(userData);
     return user
       ? {
           id: user._id,
@@ -34,10 +34,10 @@ class UserService {
 
   async loginUser(userData) {
     const { username, password } = userData;
-    const user = await UserRepository.findOne({ username });
+    const user = await userRepository.findOne({ username });
 
     if (!user) {
-      throw new Error("UserRepositoryNotFound");
+      throw new Error("userRepositoryNotFound");
     }
     if (!(await user.comparePassword(password))) {
       throw new Error("InvalidAcess");
@@ -46,7 +46,7 @@ class UserService {
   }
 
   async updateUpdate(id, userData) {
-    const updatedUser = await UserRepository.update(id, userData);
+    const updatedUser = await userRepository.update(id, userData);
     return updatedUser
       ? {
           id: updatedUser._id,
@@ -56,7 +56,7 @@ class UserService {
   }
 
   async deleteUser(id) {
-    const user = await UserRepository.findByIdAndDelete(id);
+    const user = await userRepository.findByIdAndDelete(id);
 
     return updatedUser
       ? {
