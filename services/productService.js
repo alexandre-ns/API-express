@@ -31,15 +31,17 @@ class ProductService {
 
   async createProduct(product) {
     const newProduct = await productRepository.create(product);
-    return {
-      id: newProduct._id,
-      name: newProduct.name,
-      price: newProduct.price,
-      category: newProduct.category,
-      quantityStock: newProduct.quantityStock,
-      description: product.description,
-      createdAt: product.createdAt
-    };
+    return newProduct
+      ? {
+          id: newProduct._id,
+          name: newProduct.name,
+          price: newProduct.price,
+          category: newProduct.category,
+          quantityStock: newProduct.quantityStock,
+          description: product.description,
+          createdAt: product.createdAt
+        }
+      : null
   }
 
   async updateProduct(id, product) {

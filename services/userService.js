@@ -58,7 +58,7 @@ class UserService {
   async deleteUser(id) {
     const user = await userRepository.findByIdAndDelete(id);
 
-    return updatedUser
+    return user
       ? {
           id: updatedUser._id,
           username: updatedUser.username,
