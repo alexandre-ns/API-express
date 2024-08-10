@@ -10,6 +10,9 @@ lerna-debug.log*
 #migrations
 migrations/
 
+#tasks
+anotation
+
 #others
 .eslint.json
 eslint.config.mjs
