@@ -22,7 +22,8 @@ class UserService {
       : null;
   }
 
-  async createUser(userData) {
+  //REVIEW - create user exists?
+ /* async createUser(userData) {
     const user = await userRepository.create(userData);
     return user
       ? {
@@ -30,20 +31,7 @@ class UserService {
           username: user.username,
         }
       : null;
-  }
-
-  async loginUser(userData) {
-    const { username, password } = userData;
-    const user = await userRepository.findOne({ username });
-
-    if (!user) {
-      throw new Error("userRepositoryNotFound");
-    }
-    if (!(await user.comparePassword(password))) {
-      throw new Error("InvalidAcess");
-    }
-    return { message: "Login successful", user: user.username };
-  }
+  }*/
 
   async updateUpdate(id, userData) {
     const updatedUser = await userRepository.update(id, userData);

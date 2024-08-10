@@ -13,17 +13,17 @@ class UserController {
   }
 
 
-  async registerUser(req, res) {
+  /*REVIEW -  async registerUser(req, res) {
     try {
         const newuser = await userService.createUser(req.body);
         res.status(201).json(newuser);
     } catch (err) {
         res.status(400).json({ message: err.message });
     }
-  }
+  }*/
 
 
-  async loginUser(req, res) {
+  /*async loginUser(req, res) {
     try {
         const user = await userService.loginUser(req.body);
         res.status(200).json(user);
@@ -36,7 +36,7 @@ class UserController {
           }
           res.status(500).json({ message: 'Internal server error' });
     }
-  }
+  }*/
 
   async deleteUser(req, res) {
     try {
