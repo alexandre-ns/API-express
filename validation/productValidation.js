@@ -1,83 +1,83 @@
 const productValidationID = {
   id: {
-    in: ["params"],
+    in: ['params'],
     isMongoId: {
-      errorMessage: "Invalid product ID",
+      errorMessage: 'Invalid product ID'
     },
     notEmpty: {
-      errorMessage: "Product ID is required",
+      errorMessage: 'Product ID is required'
     }
   }
 };
 
 const productValidationAll = {
   name: {
-    in: ["body"],
+    in: ['body'],
     notEmpty: true,
-    errorMessage: "Product name is required",
+    errorMessage: 'Product name is required'
   },
   price: {
-    in: ["body"],
+    in: ['body'],
     isFloat: {
-      options: { gt: 0 },
+      options: { gt: 0 }
     },
-    errorMessage: "Price must be greater than 0",
+    errorMessage: 'Price must be greater than 0'
   },
   quantityStock: {
-    in: ["body"],
+    in: ['body'],
     isInt: {
-      options: { gt: 0 },
+      options: { gt: 0 }
     },
-    errorMessage: "Quantity stock must be greater than 0",
+    errorMessage: 'Quantity stock must be greater than 0'
   },
   category: {
-    in: ["body"],
+    in: ['body'],
     isMongoId: {
-      errorMessage: "Invalid category ID",
+      errorMessage: 'Invalid category ID'
     },
-    optional: true,
+    optional: true
   }
 };
 
 const productValidationSome = {
   id: {
-    in: ["params"],
+    in: ['params'],
     isMongoId: {
-      errorMessage: "Invalid product ID",
+      errorMessage: 'Invalid product ID'
     },
     notEmpty: {
-      errorMessage: "Product ID is required",
-    },
+      errorMessage: 'Product ID is required'
+    }
   },
   name: {
-    in: ["body"],
+    in: ['body'],
     notEmpty: true,
-    errorMessage: "Product name is required",
-    optional: true,
+    errorMessage: 'Product name is required',
+    optional: true
   },
   price: {
-    in: ["body"],
+    in: ['body'],
     isFloat: {
-      options: { gt: 0 },
+      options: { gt: 0 }
     },
-    errorMessage: "Price must be greater than 0",
-    optional: true,
+    errorMessage: 'Price must be greater than 0',
+    optional: true
   },
   quantityStock: {
-    in: ["body"],
+    in: ['body'],
     isInt: {
-      options: { gt: 0 },
+      options: { gt: 0 }
     },
-    errorMessage: "Quantity stock must be greater than 0",
-    optional: true,
+    errorMessage: 'Quantity stock must be greater than 0',
+    optional: true
   },
   category: {
-    in: ["body"],
+    in: ['body'],
     isMongoId: {
-      errorMessage: "Invalid category ID",
+      errorMessage: 'Invalid category ID'
     },
-    optional: true,
-  },
+    optional: true
+  }
 };
 
 module.exports = {
@@ -85,4 +85,3 @@ module.exports = {
   productValidationAll,
   productValidationSome
 };
-

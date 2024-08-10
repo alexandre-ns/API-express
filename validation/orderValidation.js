@@ -1,110 +1,110 @@
 const orderValidationID = {
   id: {
-    in: ["params"],
+    in: ['params'],
     isMongoId: {
-      errorMessage: "Invalid Cart ID",
+      errorMessage: 'Invalid Cart ID'
     },
     notEmpty: {
-      errorMessage: "Cart ID is required",
-    },
-  },
+      errorMessage: 'Cart ID is required'
+    }
+  }
 };
 
 const orderValidationAll = {
-  "products.*.product": {
-    in: ["body"],
+  'products.*.product': {
+    in: ['body'],
     isMongoId: {
-      errorMessage: "Invalid product ID",
-    },
+      errorMessage: 'Invalid product ID'
+    }
   },
-  "products.*.name": {
-    in: ["body"],
-    errorMessage: "Product name is required",
+  'products.*.name': {
+    in: ['body'],
+    errorMessage: 'Product name is required'
   },
-  "products.*.quantity": {
-    in: ["body"],
+  'products.*.quantity': {
+    in: ['body'],
     isInt: {
-      errorMessage: "Quantity must be greater than 0",
-      options: { min: 1 },
-    },
+      errorMessage: 'Quantity must be greater than 0',
+      options: { min: 1 }
+    }
   },
   user: {
     isMongoId: {
-      errorMessage: "Invalid User ID",
+      errorMessage: 'Invalid User ID'
     },
     notEmpty: {
-      errorMessage: "User ID is required",
-    },
+      errorMessage: 'User ID is required'
+    }
   },
   totalAmount: {
-    in: ["body"],
+    in: ['body'],
     isInt: {
-      options: { gt: 0 },
+      options: { gt: 0 }
     },
-    errorMessage: "Quantity stock must be greater than 0",
-    optional: true,
+    errorMessage: 'Quantity stock must be greater than 0',
+    optional: true
   },
   status: {
-    in: ["body"],
+    in: ['body'],
     isIn: {
-      options: [["pending", "shipped", "delivered"]],
-      errorMessage: "Status must be pending, shipped, delivered",
+      options: [['pending', 'shipped', 'delivered']],
+      errorMessage: 'Status must be pending, shipped, delivered'
     },
-    optional: true,
+    optional: true
   }
 };
 
 const orderValidationSome = {
   id: {
-    in: ["params"],
+    in: ['params'],
     isMongoId: {
-      errorMessage: "Invalid Cart ID",
+      errorMessage: 'Invalid Cart ID'
     },
     notEmpty: {
-      errorMessage: "Cart ID is required",
-    },
+      errorMessage: 'Cart ID is required'
+    }
   },
-  "products.*.product": {
-    in: ["body"],
+  'products.*.product': {
+    in: ['body'],
     isMongoId: {
-      errorMessage: "Invalid product ID",
+      errorMessage: 'Invalid product ID'
     },
-    optional: true,
+    optional: true
   },
-  "products.*.name": {
-    in: ["body"],
-    errorMessage: "Product name is required",
-    optional: true,
+  'products.*.name': {
+    in: ['body'],
+    errorMessage: 'Product name is required',
+    optional: true
   },
-  "products.*.quantity": {
-    in: ["body"],
+  'products.*.quantity': {
+    in: ['body'],
     isInt: {
-      errorMessage: "Quantity must be greater than 0",
-      options: { min: 1 },
+      errorMessage: 'Quantity must be greater than 0',
+      options: { min: 1 }
     },
-    optional: true,
+    optional: true
   },
   user: {
     isMongoId: {
-      errorMessage: "Invalid User ID",
+      errorMessage: 'Invalid User ID'
     },
-    optional: true,
+    optional: true
   },
   totalAmount: {
-    in: ["body"],
+    in: ['body'],
     isInt: {
-      options: { gt: 0 },
+      options: { gt: 0 }
     },
-    errorMessage: "Quantity stock must be greater than 0",
-    optional: true,
+    errorMessage: 'Quantity stock must be greater than 0',
+    optional: true
   },
   status: {
-    in: ["body"],
+    in: ['body'],
     isIn: {
-      options: [["pending", "shipped", "delivered"]],
-      errorMessage: "Status must be pending, shipped, delivered",
+      options: [['pending', 'shipped', 'delivered']],
+      errorMessage: 'Status must be pending, shipped, delivered'
     },
-    optional: true,
+    optional: true
   }
 };
 

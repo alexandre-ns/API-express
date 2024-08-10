@@ -1,5 +1,5 @@
-const router = require("express").Router();
-const CartService = require("../services/cartService");
+const router = require('express').Router();
+const CartService = require('../services/cartService');
 
 class CartController {
   async getAllCarts(req, res) {

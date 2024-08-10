@@ -1,4 +1,4 @@
-const OrderRepository = require("../repositories/orderRepository");
+const OrderRepository = require('../repositories/orderRepository');
 
 class OrderService {
   async getAllOrders() {
@@ -9,7 +9,7 @@ class OrderService {
       products: order.products,
       totalAmount: order.totalAmount,
       status: order.status,
-      createdAt: order.createdAt,
+      createdAt: order.createdAt
     }));
   }
 
@@ -22,7 +22,7 @@ class OrderService {
           products: order.products,
           totalAmount: order.totalAmount,
           status: order.status,
-          createdAt: order.createdAt,
+          createdAt: order.createdAt
         }
       : null;
   }
@@ -35,7 +35,7 @@ class OrderService {
       products: newOrder.products,
       totalAmount: newOrder.totalAmount,
       status: newOrder.status,
-      createdAt: newOrder.createdAt,
+      createdAt: newOrder.createdAt
     };
   }
 
@@ -61,7 +61,7 @@ class OrderService {
           name: deletedProduct.name,
           price: deletedProduct.email,
           category: deletedProduct.category,
-          quantityStock: deletedProduct.quantityStock,
+          quantityStock: deletedProduct.quantityStock
         }
       : null;
   }

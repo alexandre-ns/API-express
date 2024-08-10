@@ -1,39 +1,39 @@
 const categoryValidationID = {
   id: {
-    in: ["params"],
+    in: ['params'],
     isMongoId: {
-      errorMessage: "Invalid Category ID",
+      errorMessage: 'Invalid Category ID'
     },
     notEmpty: {
-      errorMessage: "Category ID is required",
-    },
-  },
+      errorMessage: 'Category ID is required'
+    }
+  }
 };
 
 const categoryValidationAll = {
   name: {
-    in: ["body"],
+    in: ['body'],
     notEmpty: true,
-    errorMessage: "Category name is required",
-  },
+    errorMessage: 'Category name is required'
+  }
 };
 
 const categoryValidationSome = {
   id: {
-    in: ["params"],
+    in: ['params'],
     isMongoId: {
-      errorMessage: "Invalid Category ID",
+      errorMessage: 'Invalid Category ID'
     },
     notEmpty: {
-      errorMessage: "Category ID is required",
+      errorMessage: 'Category ID is required'
     }
   },
   name: {
-    in: ["body"],
+    in: ['body'],
     notEmpty: true,
-    errorMessage: "Category name is required",
-    optional: false,
-  },
+    errorMessage: 'Category name is required',
+    optional: false
+  }
 };
 
 module.exports = {

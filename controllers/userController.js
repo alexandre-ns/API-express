@@ -1,8 +1,7 @@
-const router = require("express").Router();
-const userService = require("../services/userService");
+const router = require('express').Router();
+const userService = require('../services/userService');
 
 class UserController {
-
   async getAllUsers(req, res) {
     try {
       const users = await userService.getAllUsers();
@@ -12,7 +11,6 @@ class UserController {
     }
   }
 
-
   /*REVIEW -  async registerUser(req, res) {
     try {
         const newuser = await userService.createUser(req.body);
@@ -21,7 +19,6 @@ class UserController {
         res.status(400).json({ message: err.message });
     }
   }*/
-
 
   /*async loginUser(req, res) {
     try {
@@ -43,7 +40,7 @@ class UserController {
       const user = await userService.deleteUser(req.params.id);
       res.status(200).json(user);
     } catch (error) {
-        return res.status(404).json({ message: 'User not found' });
+      return res.status(404).json({ message: 'User not found' });
     }
   }
 }

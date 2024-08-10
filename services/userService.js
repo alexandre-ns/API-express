@@ -1,5 +1,5 @@
 const express = require('express');
-const userRepository = require("../repositories/userRepository");
+const userRepository = require('../repositories/userRepository');
 const jwt = require('jsonwebtoken');
 const router = express.Router();
 
@@ -8,7 +8,7 @@ class UserService {
     const users = await userRepository.findAll();
     return users.map((user) => ({
       id: user._id,
-      username: user.username,
+      username: user.username
     }));
   }
 
@@ -17,13 +17,13 @@ class UserService {
     return user
       ? {
           id: user._id,
-          username: user.username,
+          username: user.username
         }
       : null;
   }
 
   //REVIEW - create user exists?
- /* async createUser(userData) {
+  /* async createUser(userData) {
     const user = await userRepository.create(userData);
     return user
       ? {
@@ -49,7 +49,7 @@ class UserService {
     return user
       ? {
           id: updatedUser._id,
-          username: updatedUser.username,
+          username: updatedUser.username
         }
       : null;
   }

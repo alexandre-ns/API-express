@@ -1,39 +1,39 @@
 const express = require('express');
 const router = express.Router();
-const productController = require("../controllers/productController");
-const generalMiddleware = require("../middlewares/general/generalMiddleware");
+const productController = require('../controllers/productController');
+const generalMiddleware = require('../middlewares/general/generalMiddleware');
 const {
   productValidationID,
   productValidationAll,
   productValidationSome
-} = require("../validation/productValidation");
-const {checkSchema} = require("express-validator");
+} = require('../validation/productValidation');
+const { checkSchema } = require('express-validator');
 
-
-router.get("/", productController.getAllProducts);
+router.get('/', productController.getAllProducts);
 
 router.get(
-  "/:id",
+  '/:id',
   checkSchema(productValidationID),
   generalMiddleware,
   productController.getProductById
 );
 
 router.post(
-  "/",
+  '/',
   checkSchema(productValidationAll),
   generalMiddleware,
   productController.createProduct
 );
 
 router.put(
-  "/:id", 
+  '/:id',
   checkSchema(productValidationSome),
   generalMiddleware,
-  productController.updateProduct);
+  productController.updateProduct
+);
 
 router.delete(
-  "/:id",
+  '/:id',
   checkSchema(productValidationID),
   generalMiddleware,
   productController.deleteProduct

@@ -1,8 +1,7 @@
-const router = require("express").Router();
-const productService = require("../services/productService");
+const router = require('express').Router();
+const productService = require('../services/productService');
 
 class ProductController {
-
   async getAllProducts(req, res) {
     try {
       const products = await productService.getAllProducts();
@@ -13,15 +12,15 @@ class ProductController {
   }
 
   async getProductById(req, res) {
-    console.log("controller --->1");
+    console.log('controller --->1');
     try {
       const product = await productService.getProductById(req.params.id);
       if (!product) {
-        return res.status(404).json({ message: "Product not found" });
+        return res.status(404).json({ message: 'Product not found' });
       }
       res.status(200).json(product);
     } catch (err) {
-      res.status(404).json({ message: "Product not found" });
+      res.status(404).json({ message: 'Product not found' });
     }
   }
 

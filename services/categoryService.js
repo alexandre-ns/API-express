@@ -1,11 +1,11 @@
-const CategoryRepository = require("../repositories/categoryRepository");
+const CategoryRepository = require('../repositories/categoryRepository');
 
 class CategoryService {
   async getAllCategories() {
     const categories = await CategoryRepository.findAll();
     return categories.map((category) => ({
       id: category._id,
-      name: category.name,
+      name: category.name
     }));
   }
 
@@ -14,7 +14,7 @@ class CategoryService {
     return category
       ? {
           id: category._id,
-          name: category.name,
+          name: category.name
         }
       : null;
   }
@@ -23,7 +23,7 @@ class CategoryService {
     const newCategory = await CategoryRepository.create(category);
     return {
       id: newCategory._id,
-      name: newCategory.name,
+      name: newCategory.name
     };
   }
 
@@ -32,7 +32,7 @@ class CategoryService {
     return updatedCategory
       ? {
           id: updatedCategory._id,
-          name: updatedCategory.name,
+          name: updatedCategory.name
         }
       : null;
   }
@@ -42,7 +42,7 @@ class CategoryService {
     return deletedCategory
       ? {
           id: deletedCategory._id,
-          name: deletedCategory.name,
+          name: deletedCategory.name
         }
       : null;
   }

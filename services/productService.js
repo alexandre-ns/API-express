@@ -1,4 +1,4 @@
-const productRepository = require("../repositories/productRepository");
+const productRepository = require('../repositories/productRepository');
 
 class ProductService {
   async getAllProducts() {
@@ -41,7 +41,7 @@ class ProductService {
           description: product.description,
           createdAt: product.createdAt
         }
-      : null
+      : null;
   }
 
   async updateProduct(id, product) {
@@ -69,7 +69,7 @@ class ProductService {
           category: deletedProduct.category,
           quantityStock: deletedProduct.quantityStock,
           description: product.description,
-          createdAt: product.createdAt,
+          createdAt: product.createdAt
         }
       : null;
   }

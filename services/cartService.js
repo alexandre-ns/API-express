@@ -1,7 +1,6 @@
-const CartRepository = require("../repositories/productRepository");
+const CartRepository = require('../repositories/productRepository');
 
 class CartService {
-
   async getAllCarts() {
     return await Cart.find();
   }
@@ -28,7 +27,7 @@ class CartService {
     const cart = await Cart.findByIdAndDelete(id);
 
     if (!cart) {
-      throw new Error("CategoryNotFound");
+      throw new Error('CategoryNotFound');
     }
     return cart;
   }

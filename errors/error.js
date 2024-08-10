@@ -5,14 +5,14 @@
 class NotFoundError extends Error {
   constructor(message) {
     super(message);
-    this.name = "NotFound";
+    this.name = 'NotFound';
   }
 }
 
 class ValidationError extends Error {
   constructor(message) {
     super(message);
-    this.name = "Validation";
+    this.name = 'Validation';
   }
 }
 

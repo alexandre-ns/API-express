@@ -1,56 +1,56 @@
 const userValidationID = {
   id: {
-    in: ["params"],
+    in: ['params'],
     isMongoId: {
-      errorMessage: "Invalid user ID",
+      errorMessage: 'Invalid user ID'
     },
     notEmpty: {
-      errorMessage: "User ID is required",
+      errorMessage: 'User ID is required'
     }
   }
 };
 
 const userValidationAll = {
   username: {
-    in: ["body"],
+    in: ['body'],
     notEmpty: true,
-    errorMessage: "User name is required",
+    errorMessage: 'User name is required'
   },
   password: {
-    in: ["body"],
+    in: ['body'],
     isLength: {
       options: { min: 8 },
-      errorMessage: "Password must be at least 8 characters long",
+      errorMessage: 'Password must be at least 8 characters long'
     },
     notEmpty: {
-      errorMessage: "Password is required",
+      errorMessage: 'Password is required'
     }
   }
 };
 
 const userValidationSome = {
   id: {
-    in: ["params"],
+    in: ['params'],
     isMongoId: {
-      errorMessage: "Invalid product ID",
+      errorMessage: 'Invalid product ID'
     },
     notEmpty: {
-      errorMessage: "Product ID is required",
-    },
+      errorMessage: 'Product ID is required'
+    }
   },
   username: {
-    in: ["body"],
+    in: ['body'],
     notEmpty: true,
-    errorMessage: "Product name is required",
+    errorMessage: 'Product name is required'
   },
   password: {
-    in: ["body"],
+    in: ['body'],
     isLength: {
       options: { min: 8 },
-      errorMessage: "Password must be at least 8 characters long",
+      errorMessage: 'Password must be at least 8 characters long'
     },
     notEmpty: {
-      errorMessage: "Password is required",
+      errorMessage: 'Password is required'
     }
   }
 };
@@ -58,5 +58,5 @@ const userValidationSome = {
 module.exports = {
   userValidationID,
   userValidationAll,
-  userValidationSome,
+  userValidationSome
 };

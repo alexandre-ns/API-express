@@ -2,8 +2,8 @@ const {
   body,
   param,
   validationResult,
-  checkSchema,
-} = require("express-validator");
+  checkSchema
+} = require('express-validator');
 
 const generalMiddleware = async (req, res, next) => {
   const errors = validationResult(req);
