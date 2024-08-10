@@ -12,7 +12,6 @@ class ProductController {
     }
   }
 
-
   async getProductById(req, res) {
     console.log("controller --->1");
     try {
@@ -26,7 +25,6 @@ class ProductController {
     }
   }
 
-
   async createProduct(req, res) {
     try {
       const newproduct = await productService.createProduct(req.body);
@@ -35,7 +33,6 @@ class ProductController {
       res.status(400).json({ message: err.message });
     }
   }
-
 
   async updateProduct(req, res) {
     try {
@@ -51,7 +48,6 @@ class ProductController {
       res.status(400).json({ message: err.message });
     }
   }
-
 
   async deleteProduct(req, res) {
     try {

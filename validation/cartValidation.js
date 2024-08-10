@@ -43,6 +43,15 @@ const cartValidationAll = {
 };
 
 const cartValidationSome = {
+  id: {
+    in: ["params"],
+    isMongoId: {
+      errorMessage: "Invalid Cart ID",
+    },
+    notEmpty: {
+      errorMessage: "Cart ID is required",
+    },
+  },
   "products.*.product": {
     in: ["body"],
     isMongoId: {
@@ -50,7 +59,7 @@ const cartValidationSome = {
     },
     notEmpty: {
       errorMessage: "Product ID is required",
-    }
+    },
   },
   "products.*.quantity": {
     in: ["body"],
