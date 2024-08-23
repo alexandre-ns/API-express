@@ -15,7 +15,20 @@ O projeto conta com uma estrutura de arquivos e diretórios([express-generator](
 A API conta com modelos de usuários contando com sistema simples de autenticação de login e restrição com token.
 Sistema de validação de dados
 
-## Tecnologias usadas
+## Resumo de informações
+
+- API REST.
+- Arquitetura de camadas.
+- banco de dados não relacional mongoDB(ODM mongoose).
+- Middlewares de autenticação(JWT).
+- Middlewares com validações robustas de dados(Schema validation - express-validator).
+- Erros personalizados.
+- RabbitMQ para implementação de fila para processamento de dados (amqplib).
+- Testes com mocha - (should, supertest).
+- Arquivos shell script auxiliares com instruções para banco MongoDB e servidor RabbitMQ.
+- Collection Postman para interações simples com api.
+
+## Tecnologias utilizadas
 
 - desenvolvimento
 
@@ -28,14 +41,10 @@ Sistema de validação de dados
 
   - MongoDB
   - \*ODM Mongoose
-  - \*Mongosh
-  - \*migrate-mongo
 
 - testes
 
   - mocha
-  - should
-  - supertest
   - Postman
 
 - auxiliares

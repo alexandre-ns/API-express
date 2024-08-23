@@ -18,9 +18,10 @@ anotation.txt
 eslint.config.mjs
 migrate-mongo-config.js
 public/
-views/
+src/views/
 config/
 .prettierrc
+src/inf/collectionPostman
 
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
