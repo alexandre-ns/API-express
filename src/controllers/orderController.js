@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const OrderService = require('../services/orderService');
+const { RabbitmqQueue } = require('../../src/inf/rabbitmq/rabbitmq');
 
 class OrderController {
   async getAllOrders(req, res) {
@@ -24,8 +25,12 @@ class OrderController {
   }
 
   async createOrder(req, res) {
+    console.log('##################> entrou createOrder');
     try {
-      const newOrder = await OrderService.createOrder(req.body);
+      //const newOrder = await OrderService.createOrder(req.body);
+      await sendMessage(JSON.stringify(req.body)); //NOTE - converte os dados em string por conta do funcionamento do rabbitmq
+      console.log('##################> createOrder 2');
+
       res.status(201).json(newOrder);
     } catch (err) {
       res.status(400).json({ message: err.message });

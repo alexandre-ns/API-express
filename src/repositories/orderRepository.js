@@ -10,7 +10,9 @@ class OrderRepository {
   }
 
   async create(order) {
+    console.log('##################> antes createOrder');
     const newOrder = new Order(order);
+    console.log('##################> depois createOrder');
     return newOrder.save();
   }
 

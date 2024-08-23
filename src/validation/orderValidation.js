@@ -38,10 +38,10 @@ const orderValidationAll = {
   },
   totalAmount: {
     in: ['body'],
-    isInt: {
+    isFloat: {
       options: { gt: 0 }
     },
-    errorMessage: 'Quantity stock must be greater than 0',
+    errorMessage: 'Quantity totalAmount must be greater than 0',
     optional: true
   },
   status: {
@@ -92,10 +92,10 @@ const orderValidationSome = {
   },
   totalAmount: {
     in: ['body'],
-    isInt: {
+    isFloat: {
       options: { gt: 0 }
     },
-    errorMessage: 'Quantity stock must be greater than 0',
+    errorMessage: 'Quantity totalAmount must be greater than 0',
     optional: true
   },
   status: {
