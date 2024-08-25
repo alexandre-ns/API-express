@@ -12,7 +12,6 @@ class ProductController {
   }
 
   async getProductById(req, res) {
-    console.log('controller --->1');
     try {
       const product = await productService.getProductById(req.params.id);
       if (!product) {
