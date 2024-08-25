@@ -19,7 +19,6 @@ eslint.config.mjs
 migrate-mongo-config.js
 public/
 src/views/
-config/
 .prettierrc
 src/inf/collectionPostman
 
