@@ -6,7 +6,7 @@
 
 Em desenvolvimento [ATIVIDADES](https://github.com/users/alexandre-ns/projects/1/views/1)
 
-## sistema
+## sist
 
 ## Sobre projeto API express.js
 
