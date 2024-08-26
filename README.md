@@ -65,26 +65,25 @@ O projeto segue modelo de arquitetura de camadas
 Estrutura Principal de diretórios
 
 project
-├── controllers
-├── errors
-├── middlewares
-│   ├── auth
-│   └── validator
-├── models
-├── repositories
-├── routes
-├── services
-├── test
-└── validation
+├── bin   // EntryPoint da aplicação
+└── src
+    ├── config                // Camada de Infraestrutura e outras atividades.
+    │   ├── collectionPostman
+    │   ├── database          // Banco de Dados.
+    │   └── rabbitmq          // Define classe base para conexão para criação de fila(RabbitMQ).
+    ├── controllers           // Camada de Apresentação
+    ├── errors                // Definição de Erros personalizados.
+    ├── middlewares           // Define funções de middlewares.
+    │   ├── auth
+    │   └── validation
+    ├── models                // Camada de Domínio
+    ├── repositories          // Camada de Persistência
+    ├── routes                // Define as rotas.
+    ├── services              // Camada de Aplicação.
+    │   └── queueConsumer     // consumidor de fila.
+    ├── test                  // testes funcionais e testes de integração.
+    └── validation            // validações de dados das requisições.
 ```
-
-Sistema implementado com base em arquitetura de camadas
-
-1.  controllers/ camada de apresentação - interface com o usuário.
-2.  services/ camada de aplicação - lógica da aplicação.
-3.  models/ camada de domínio - modela os dados.
-4.  repositories/ camada de repository - interage com o banco de dados
-5.  inf/ camada de infraestrutura - serviços basicos para funcionamento.
 
 ### User
 
