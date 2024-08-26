@@ -6,8 +6,6 @@
 
 Em desenvolvimento [ATIVIDADES](https://github.com/users/alexandre-ns/projects/1/views/1)
 
-## sistema
-
 ## Sobre projeto API express.js
 
 "API express.js" é uma API(Application Programming Interface) REST. O objetivo dessa aplicação é um simples projeto para portifólio, sendo um simples modelo de API rest de E-commerce usando tecnologias como Node.js, Express.js, além de um banco de dados MongoDB.
@@ -19,16 +17,20 @@ Sistema de validação de dados
 
 ## Resumo de informações
 
-- API REST.
-- Arquitetura de camadas.
-- banco de dados não relacional mongoDB(ODM mongoose).
-- Middlewares de autenticação(JWT).
-- Middlewares com validações robustas de dados(Schema validation - express-validator).
-- Erros personalizados.
-- RabbitMQ para implementação de fila para processamento de dados (amqplib).
-- Testes com mocha - (should, supertest).
-- Arquivos shell script auxiliares com instruções para banco MongoDB e servidor RabbitMQ.
-- Collection Postman para interações simples com api.
+:white_check_mark: Implementado.
+:chart_with_upwards_trend: Sendo implementada.
+:hourglass_flowing_sand: Será implementado.
+
+- :white_check_mark: API REST.
+- :white_check_mark: Arquitetura de camadas.
+- :white_check_mark: banco de dados não relacional mongoDB(ODM mongoose).
+- :chart_with_upwards_trend: Middlewares de autenticação(JWT).
+- :white_check_mark: Middlewares com validações robustas de dados(Schema validation - express-validator).
+- :chart_with_upwards_trend: Erros personalizados.
+- :white_check_mark: RabbitMQ para implementação de fila para processamento de dados (amqplib).
+- :chart_with_upwards_trend: Testes com mocha - (should, supertest).
+- :hourglass_flowing_sand: Arquivos shell script auxiliares com instruções para banco MongoDB e servidor RabbitMQ.
+- :hourglass_flowing_sand: Collection Postman para interações simples com api.
 
 ## Tecnologias utilizadas
 
