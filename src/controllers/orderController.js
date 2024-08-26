@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const OrderService = require('../services/orderService');
-//const { RabbitmqQueue } = require('../../src/inf/rabbitmq/rabbitmq');
-const rabbitmqQueue = require('../../src/inf/rabbitmq/rabbitmq');
+const { v4: uuidv4 } = require('uuid');
+const orderQueueService = require('../../src/services/queueConsumer/orderQueue');
 
 class OrderController {
   async getAllOrders(req, res) {
@@ -27,9 +27,11 @@ class OrderController {
 
   async createOrder(req, res) {
     try {
-      await rabbitmqQueue.sendMessage(JSON.stringify(req.body)); //FIXME - converte os dados em string por conta do funcionamento do rabbitmq
-
-      res.status(201).json(newOrder);
+      req.body = { ...req.body, id: uuidv4() };
+      await orderQueueService.sendMessage(JSON.stringify(req.body)); //FIXME - converte os dados em string por conta do funcionamento do rabbitmq
+      res
+        .status(202)
+        .json({ message: 'Pedido recebido e está sendo processado' });
     } catch (err) {
       res.status(400).json({ message: err.message });
     }

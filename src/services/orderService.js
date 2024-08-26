@@ -29,14 +29,17 @@ class OrderService {
 
   async createOrder(order) {
     const newOrder = await OrderRepository.create(order);
-    return {
-      id: newOrder._id,
-      user: newOrder.user,
-      products: newOrder.products,
-      totalAmount: newOrder.totalAmount,
-      status: newOrder.status,
-      createdAt: newOrder.createdAt
-    };
+    console.log('order [SERVICE]', newOrder, '\n');
+    return newOrder
+      ? {
+          id: newOrder._id,
+          user: newOrder.user,
+          products: newOrder.products,
+          totalAmount: newOrder.totalAmount,
+          status: newOrder.status,
+          createdAt: newOrder.createdAt
+        }
+      : null;
   }
 
   async updateOrder(id, order) {

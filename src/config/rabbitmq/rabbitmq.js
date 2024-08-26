@@ -1,18 +1,17 @@
 const amqp = require('amqplib');
-const queue = 'order_queue';
-const OrderService = require('../../services/orderService');
 
 class RabbitmqQueue {
-  constructor(queueName) {
+  constructor(connectionUrl, queueName) {
     this.queue = queueName;
     this.channel = null;
     this.connection = null;
+    this.urlConection = connectionUrl;
   }
 
   async connectRabbitMQ() {
     if (!this.connection) {
       try {
-        this.connection = await amqp.connect(process.env.RABBITMQServer); //NOTE -  default node address /etc/rabbitmq/rabbitmq-env.conf
+        this.connection = await amqp.connect(this.urlConection); //NOTE - process.env.RABBITMQServer default node address /etc/rabbitmq/rabbitmq-env.conf
         this.channel = await this.connection.createChannel();
         await this.channel.assertQueue(this.queue, { durable: true });
         console.log('RabbitMQ SERVER CONECTADO COM SUCESSO');
@@ -32,7 +31,7 @@ class RabbitmqQueue {
     });
   }
 
-  async startConsumer() {
+  /*async startConsumer() {
     if (!this.channel) {
       await this.connectRabbitMQ();
     }
@@ -61,7 +60,7 @@ class RabbitmqQueue {
       },
       { noAck: false }
     );
-  }
+  }*/
 
   async closeConnection() {
     if (this.channel) {
@@ -72,13 +71,13 @@ class RabbitmqQueue {
     }
   }
 
-  static getInstance() {
+  /*static getInstance() {
     if (!RabbitmqQueue.instance) {
       RabbitmqQueue.instance = new RabbitmqQueue(process.env.RABBITMQQUEUENAME);
     }
     console.log('Classe RabbitMQ instanciada com sucesso!');
     return RabbitmqQueue.instance;
-  }
+  }*/
 }
 
-module.exports = RabbitmqQueue.getInstance();
+module.exports = RabbitmqQueue;

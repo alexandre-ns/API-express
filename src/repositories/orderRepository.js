@@ -11,6 +11,7 @@ class OrderRepository {
 
   async create(order) {
     const newOrder = new Order(order);
+    //console.log('REPOSITORY ', newOrder);
     return newOrder.save();
   }
 
