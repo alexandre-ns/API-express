@@ -7,19 +7,19 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const connectDB = require('./mongoose');
 const apiRoutes = require('./src/routes');
-const { RabbitmqQueue } = require('./src/inf/rabbitmq/rabbitmq');
+const orderQueueService = require('./src/services/queueConsumer/orderQueue');
 
 var app = express();
 app.use(bodyParser.json());
 
-// connect data base mongo
+// connect data base mongoDB
 connectDB();
-const queue = 'order_queue';
 
-// view engine setup
-//app.set('views', path.join(__dirname, 'views'));
-//app.set('view engine', 'jade');
-const rabbitMQService = new RabbitmqQueue(queue);
+// initialize queue consumer
+(async () => {
+  await orderQueueService.connectRabbitMQ();
+  orderQueueService.startConsumer();
+})();
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -34,7 +34,6 @@ app.use('/api', apiRoutes);
 app.use(function (req, res, next) {
   next(createError(404));
 });
-//startConsumer().catch(console.error);
 
 // error handler
 app.use(function (err, req, res, next) {
