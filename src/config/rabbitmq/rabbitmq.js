@@ -31,37 +31,6 @@ class RabbitmqQueue {
     });
   }
 
-  /*async startConsumer() {
-    if (!this.channel) {
-      await this.connectRabbitMQ();
-    }
-    console.log('Monitorando fila...');
-
-    this.channel.consume(
-      this.queue,
-      async (message) => {
-        if (message !== null) {
-          console.log(
-            'Mensagem recebida::::',
-            message.content.toString(),
-            '\n\n[',
-            JSON.parse(message.content.toString()),
-            ']'
-          );
-          try {
-            await OrderService.createOrder(
-              JSON.parse(message.content.toString())
-            );
-            this.channel.ack(message);
-          } catch (error) {
-            console.error('Erro ao processar mensagem retirada da fila', error);
-          }
-        }
-      },
-      { noAck: false }
-    );
-  }*/
-
   async closeConnection() {
     if (this.channel) {
       await this.channel.close();
@@ -70,14 +39,6 @@ class RabbitmqQueue {
       await this.connection.close();
     }
   }
-
-  /*static getInstance() {
-    if (!RabbitmqQueue.instance) {
-      RabbitmqQueue.instance = new RabbitmqQueue(process.env.RABBITMQQUEUENAME);
-    }
-    console.log('Classe RabbitMQ instanciada com sucesso!');
-    return RabbitmqQueue.instance;
-  }*/
 }
 
 module.exports = RabbitmqQueue;
