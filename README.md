@@ -1,4 +1,4 @@
-# API REST E-Commerce Boilerplate
+# Boilerplate - API REST E-Commerce express.js
 
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/alexandre-ns/API-express/blob/main/LICENSE)
 
@@ -8,7 +8,7 @@ Em desenvolvimento [ATIVIDADES](https://github.com/users/alexandre-ns/projects/1
 
 ## Sobre projeto API express.js
 
-"API express.js" é uma API(Application Programming Interface) REST de e-commerce. O objetivo dessa aplicação é um simples projeto boilerplate para portifólio, sendo um simples modelo de API rest de E-commerce usando tecnologias como Node.js, Express.js, além de um banco de dados MongoDB.
+O projeto "API express.js" é um boilerplate que consiste em uma API(Application Programming Interface) REST de e-commerce. O objetivo dessa aplicação é um simples projeto boilerplate para portifólio que pode ser usado como base para o desenvolvimento de APIs de e-commerce mais roboustas, sendo um simples modelo de API rest de E-commerce usando tecnologias como Node.js, Express.js, além de um banco de dados MongoDB.
 
 O projeto conta com uma estrutura de arquivos e diretórios construida para seguir arquitetura de camadas, justamente para oferecer uma maior modularidade e flexibilidade, conforme diferentes funcionalidades vão sendo implementadas.
 
@@ -19,13 +19,13 @@ O projeto conta com uma estrutura de arquivos e diretórios construida para segu
 :hourglass_flowing_sand: Será implementado.
 
 - :white_check_mark: API REST.
-- :white_check_mark: Arquitetura de camadas.
+- :white_check_mark: API baseada em arquitetura de camadas.
 - :white_check_mark: Banco de dados não relacional mongoDB(ODM mongoose).
 - :chart_with_upwards_trend: Middlewares de autenticação(JWT).
 - :white_check_mark: Middlewares com validações robustas de dados(Schema validation - express-validator).
 - :chart_with_upwards_trend: Erros personalizados.
 - :white_check_mark: Sistema de mensageria RabbitMQ para implementação de fila para processamento de pedidos (amqplib).
-- :chart_with_upwards_trend: Testes com mocha - (should, supertest).
+- :chart_with_upwards_trend: Testes de integração com mocha - (should, supertest).
 - :hourglass_flowing_sand: Arquivos shell script auxiliares com instruções para banco MongoDB e servidor RabbitMQ.
 - :hourglass_flowing_sand: Collection Postman para interações simples com api.
 - :white_check_mark: GIT - Padrões de commit(commitlint), Husk para hooks pré commit(Neste projeto não foi implementado sistema de branches gitflow por motivos específicos. ).
@@ -43,18 +43,32 @@ O projeto conta com uma estrutura de arquivos e diretórios construida para segu
 - Banco de dados
 
   - MongoDB
-  - \*ODM Mongoose
+  - ODM Mongoose
 
 - testes
 
-  - mocha
+  - Mocha
   - Postman
 
-- auxiliares
-  - \*Docker container
-  - Jwt
+- Validações
 
-\*Uso indireto ou tecnologia secundária.
+  - checkSchema(express-validator)
+
+- Fila
+
+  - RabbitMQ(amqplib)
+
+- Autenticação
+
+  - JWT(talvez futuramente troque por Outh2)
+
+- auxiliares
+  - Docker container
+  - shell scripts para banco de dados e fila rabbitMQ.
+  - commitlint
+  - Eslint
+  - Husk
+  - express-generator
 
 # Implementação
 
