@@ -28,7 +28,7 @@ O projeto conta com uma estrutura de arquivos e diretórios construida para segu
 - :chart_with_upwards_trend: Testes com mocha - (should, supertest).
 - :hourglass_flowing_sand: Arquivos shell script auxiliares com instruções para banco MongoDB e servidor RabbitMQ.
 - :hourglass_flowing_sand: Collection Postman para interações simples com api.
-- :white_check_mark: GIT - Padrões de commit, Husk para hooks pré commit(Neste projeto não foi implementado sistema de branches gitflow por motivos específicos. ).
+- :white_check_mark: GIT - Padrões de commit(commitlint), Husk para hooks pré commit(Neste projeto não foi implementado sistema de branches gitflow por motivos específicos. ).
 - :chart_with_upwards_trend: Alguns design patterns, como singleton, etc.
 
 ## Tecnologias utilizadas
