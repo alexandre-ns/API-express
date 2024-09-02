@@ -1,23 +1,33 @@
 const userRepository = require('../repositories/userRepository');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
+const jwtSecret = process.env.SECRET_JWT;
 
 class AuthService {
   async loginUser(userData) {
     const { username, password } = userData;
-    const user = await userRepository.findOne({ username });
+    const user = await userRepository.findByUserName(username);
 
     if (!user) {
-      throw new Error('userNotFound');
+      console.log('usuario n encontrado');
     }
     if (!(await bcrypt.compareSync(password, user.password))) {
-      throw new Error('InvalidAcess');
+      console.log('login errado');
     }
     const token = jwt.sign({ id: user._id }, process.env.SECRET_JWT, {
       expiresIn: '1h'
     });
     return token;
-    // return { message: "Login successful", user: user.username };
+  }
+
+  async checkToken(token) {
+    try {
+      const decoded = jwt.verify(token, jwtSecret);
+      return decoded;
+    } catch (error) {
+      //console.log(error);
+      throw error;
+    }
   }
 
   async registerUser(userData) {

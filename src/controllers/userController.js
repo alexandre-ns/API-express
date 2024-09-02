@@ -11,6 +11,17 @@ class UserController {
     }
   }
 
+  async getUserById(req, res) {
+    try {
+      const user = await userService.getUserById(req.params.id);
+      if (!user) {
+        return res.status(404).json({ message: 'User not found' });
+      }
+      res.status(200).json(user);
+    } catch (err) {
+      res.status(404).json({ message: 'User not found' });
+    }
+  }
   /*REVIEW -  async registerUser(req, res) {
     try {
         const newuser = await userService.createUser(req.body);

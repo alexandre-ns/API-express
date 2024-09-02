@@ -9,6 +9,10 @@ class UserRepository {
     return User.findById(id);
   }
 
+  async findByUserName(username) {
+    return User.findOne({ username: username });
+  }
+
   async create(user) {
     const newUser = new User(user);
     return newUser.save();

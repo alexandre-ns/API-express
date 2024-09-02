@@ -1,6 +1,5 @@
 const express = require('express');
 const userRepository = require('../repositories/userRepository');
-const jwt = require('jsonwebtoken');
 const router = express.Router();
 
 class UserService {

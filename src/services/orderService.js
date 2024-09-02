@@ -29,7 +29,7 @@ class OrderService {
 
   async createOrder(order) {
     const newOrder = await OrderRepository.create(order);
-    console.log('order [SERVICE]', newOrder, '\n');
+    //console.log('order [SERVICE]', newOrder, '\n');
     return newOrder
       ? {
           id: newOrder._id,

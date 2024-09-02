@@ -4,8 +4,11 @@ const authService = require('../services/authService');
 class AuthController {
   async loginUser(req, res) {
     try {
-      const user = await authService.loginUser(req.body);
-      res.status(200).json(user);
+      //console.log(req.header.o);
+      const tokenUser = await authService.loginUser(req.body);
+      res
+        .status(200)
+        .json({ message: 'User is authenticated', token: tokenUser });
     } catch (error) {
       if (error.message === 'UserNotFound') {
         return res.status(404).json({ message: 'User not found' });
