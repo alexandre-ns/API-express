@@ -1,4 +1,4 @@
-# API express.js
+# API REST E-Commerce Boilerplate
 
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/alexandre-ns/API-express/blob/main/LICENSE)
 
@@ -8,14 +8,11 @@ Em desenvolvimento [ATIVIDADES](https://github.com/users/alexandre-ns/projects/1
 
 ## Sobre projeto API express.js
 
-"API express.js" é uma API(Application Programming Interface) REST. O objetivo dessa aplicação é um simples projeto para portifólio, sendo um simples modelo de API rest de E-commerce usando tecnologias como Node.js, Express.js, além de um banco de dados MongoDB.
+"API express.js" é uma API(Application Programming Interface) REST de e-commerce. O objetivo dessa aplicação é um simples projeto boilerplate para portifólio, sendo um simples modelo de API rest de E-commerce usando tecnologias como Node.js, Express.js, além de um banco de dados MongoDB.
 
-O projeto conta com uma estrutura de arquivos e diretórios([express-generator](https://expressjs.com/en/stargenerator.html)) construida para seguir arquitetura de camadas, justamente para oferecer uma maior modularidade e flexibilidade, conforme diferentes funcionalidades vão sendo implementadas.
+O projeto conta com uma estrutura de arquivos e diretórios construida para seguir arquitetura de camadas, justamente para oferecer uma maior modularidade e flexibilidade, conforme diferentes funcionalidades vão sendo implementadas.
 
-A API conta com modelos de usuários contando com sistema simples de autenticação de login e restrição com token.
-Sistema de validação de dados
-
-## Resumo de informações
+## Resumo de informações, funcionalidades e desenvolvimento.
 
 :white_check_mark: Implementado.
 :chart_with_upwards_trend: Sendo implementada.
@@ -23,14 +20,16 @@ Sistema de validação de dados
 
 - :white_check_mark: API REST.
 - :white_check_mark: Arquitetura de camadas.
-- :white_check_mark: banco de dados não relacional mongoDB(ODM mongoose).
+- :white_check_mark: Banco de dados não relacional mongoDB(ODM mongoose).
 - :chart_with_upwards_trend: Middlewares de autenticação(JWT).
 - :white_check_mark: Middlewares com validações robustas de dados(Schema validation - express-validator).
 - :chart_with_upwards_trend: Erros personalizados.
-- :white_check_mark: RabbitMQ para implementação de fila para processamento de dados (amqplib).
+- :white_check_mark: Sistema de mensageria RabbitMQ para implementação de fila para processamento de pedidos (amqplib).
 - :chart_with_upwards_trend: Testes com mocha - (should, supertest).
 - :hourglass_flowing_sand: Arquivos shell script auxiliares com instruções para banco MongoDB e servidor RabbitMQ.
 - :hourglass_flowing_sand: Collection Postman para interações simples com api.
+- :white_check_mark: GIT - Padrões de commit, Husk para hooks pré commit(Neste projeto não foi implementado sistema de branches gitflow por motivos específicos. ).
+- :chart_with_upwards_trend: Alguns design patterns, como singleton, etc.
 
 ## Tecnologias utilizadas
 
