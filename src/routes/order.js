@@ -8,8 +8,9 @@ const {
   orderValidationSome
 } = require('../validation/orderValidation');
 const { checkSchema } = require('express-validator');
+const adminAuthMiddleware = require('../middlewares/auth/adminAuth');
 
-router.get('/', orderController.getAllOrders);
+router.get('/', adminAuthMiddleware, orderController.getAllOrders);
 
 router.get(
   '/:id',

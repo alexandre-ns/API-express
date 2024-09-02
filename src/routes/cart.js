@@ -8,8 +8,9 @@ const {
   cartValidationSome
 } = require('../validation/cartValidation');
 const { checkSchema } = require('express-validator');
+const adminAuthMiddleware = require('../middlewares/auth/adminAuth');
 
-router.get('/', cartController.getAllCarts);
+router.get('/', adminAuthMiddleware, cartController.getAllCarts);
 
 router.get(
   '/:id',
