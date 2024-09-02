@@ -1,35 +1,57 @@
-const CartRepository = require('../repositories/productRepository');
+const CartRepository = require('../repositories/cartRepository');
 
 class CartService {
   async getAllCarts() {
-    return await Cart.find();
+    const carts = await CartRepository.findAll();
+    return carts.map((cart) => ({
+      id: cart._id,
+      user: cart.user,
+      products: cart.products
+    }));
   }
 
-  async getCartById() {
-    return await Cart.findById(id);
+  async getCartById(id) {
+    const cart = await CartRepository.findById(id);
+    return cart
+      ? {
+          id: cart._id,
+          user: cart.user,
+          products: cart.products
+        }
+      : null;
   }
 
-  async createCart() {
-    const cart = new Cart(CartData);
-    return await cart.save();
+  async createCart(cart) {
+    const newCart = await CartRepository.create(cart);
+    return newCart
+      ? {
+          id: newCart._id,
+          user: newCart.user,
+          products: newCart.products
+        }
+      : null;
   }
 
-  async updateCart() {
-    const cart = await Cart.findById(id);
-    if (!cart) {
-      return null;
-    }
-    Object.assign(cart, updateData);
-    return await cart.save();
+  async updateCart(id, cart) {
+    const updatedCart = await CartRepository.update(id, cart);
+    return updatedCart
+      ? {
+          id: updatedCart._id,
+          user: updatedCart.user,
+          products: updatedCart.products
+        }
+      : null;
   }
 
-  async deleteCart() {
-    const cart = await Cart.findByIdAndDelete(id);
-
-    if (!cart) {
-      throw new Error('CategoryNotFound');
-    }
-    return cart;
+  async deleteCart(id) {
+    const deletedCart = await CartRepository.delete(id);
+    return deletedCart
+      ? {
+          id: deletedCart._id,
+          user: deletedCart.user,
+          products: deletedCart.products
+        }
+      : null;
   }
 }
 
