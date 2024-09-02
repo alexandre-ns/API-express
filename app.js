@@ -6,7 +6,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const connectDB = require('./mongoose');
-const apiRoutes = require('./src/routes');
+const apiRoutes = require('./src/routes/index');
 const orderQueueService = require('./src/services/queueConsumer/orderQueue');
 
 var app = express();
