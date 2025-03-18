@@ -14,9 +14,6 @@ O projeto conta com uma estrutura de arquivos e diretórios construida para segu
 
 ## Resumo de informações, funcionalidades e desenvolvimento.
 
-:white_check_mark: Implementado.
-:chart_with_upwards_trend: Sendo implementada.
-:hourglass_flowing_sand: Será implementado.
 
 - :white_check_mark: API REST.
 - :white_check_mark: API baseada em arquitetura de camadas.
@@ -26,10 +23,10 @@ O projeto conta com uma estrutura de arquivos e diretórios construida para segu
 - :chart_with_upwards_trend: Erros personalizados.
 - :white_check_mark: Sistema de mensageria RabbitMQ para implementação de fila para processamento de pedidos (amqplib).
 - :chart_with_upwards_trend: Testes de integração com mocha - (should, supertest).
-- :hourglass_flowing_sand: Arquivos shell script auxiliares com instruções para banco MongoDB e servidor RabbitMQ.
+- :chart_with_upwards_trend: Arquivos shell script auxiliares com instruções para banco MongoDB e servidor RabbitMQ.
 - :hourglass_flowing_sand: Collection Postman para interações simples com api.
 - :white_check_mark: GIT - Padrões de commit(commitlint), Husk para hooks pré commit(Neste projeto não foi implementado sistema de branches gitflow por motivos específicos. ).
-- :chart_with_upwards_trend: Alguns design patterns, como singleton, etc.
+- :white_check_mark: Alguns design patterns, como singleton, etc.
 
 ## Tecnologias utilizadas
 
@@ -98,23 +95,29 @@ project
     └── validation            // validações de dados das requisições.
 ```
 
-### User
+## Build
 
-### Product
+1 - Instale as dependências 
 
-### Order
+```bash
+npm install
+```
+2 - Rode o banco de dados MongoDB ou instale docker container e adicione as permissões necessárias e rode (configure).
 
-### Cart
+```bash
+src/config/database/mongodb.sh
+```
+3 - Rode Fila RabbitMQ ou instale docker container e adicione as permissões necessárias e rode (configure).
 
-# Funcionamento
+```bash
+src/config/rabbitmq/rabbitmqServer.sh
+```
 
-# Como executar o projeto
+4 - Ambiente de desenvolvimento.
+```bash
+npm run dev
+```
 
-## Ambiente de produção.
-
-### Ambiente de desenvolvimento.
-
-### Ambiente de produção.
 
 # Autor
 
