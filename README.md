@@ -2,9 +2,6 @@
 
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/alexandre-ns/API-express/blob/main/LICENSE)
 
-## Status do Projeto
-
-Em desenvolvimento [ATIVIDADES](https://github.com/users/alexandre-ns/projects/1/views/1)
 
 ## Sobre projeto API express.js
 
