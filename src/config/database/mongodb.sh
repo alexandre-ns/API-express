@@ -1,16 +1,16 @@
 #!/bin/sh
 
-DBCONTAINER=""
+DBCONTAINER="mongodb"
 NAMEDB=""
 
-docker pull mongo
+sudo docker pull mongo
 
 # local
-docker run --name $DBCONTAINER -d -p 27017:27017 mongo 
+sudo docker run --name $DBCONTAINER -d -p 27017:27017 mongo 
 
-docker start $DBCONTAINER
+sudo docker start $DBCONTAINER
 
-docker exec -it $DBCONTAINER mongosh
+sudo docker exec -it $DBCONTAINER mongosh
 
 #mongosh, check "show dbs"
-use $DBCONTAINER
+#use $DBCONTAINER
